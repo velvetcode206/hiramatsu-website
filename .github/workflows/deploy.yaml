@@ -43,19 +43,20 @@ jobs:
       - name: Build project
         run: pnpm build
 
-      - name: Set project name
-        run: echo "PROJECT_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+      - name: Install Wrangler
+        run: pnpm add -g wrangler
 
-      - name: Ensure Pages Project Exists
-        run: |
-          if ! wrangler pages project list | grep -q "$PROJECT_NAME"; then
-            echo "Creating project: $PROJECT_NAME"
-            wrangler pages project create "$PROJECT_NAME"
-          else
-            echo "Project already exists"
-          fi
+      - name: Check cloudflare pages project exists
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PROJECT_NAME: ${{ github.event.repository.name }}
+        run: |
+          if wrangler pages project get "$PROJECT_NAME" >/dev/null 2>&1; then
+            echo "Project exists: $PROJECT_NAME"
+          else
+            echo "ERROR: Cloudflare Pages project '$PROJECT_NAME' does not exist"
+            exit 1
+          fi
 
       - name: Deploy to Cloudflare Pages
         id: deploy
