@@ -5,14 +5,14 @@ on:
     branches: [main, develop]
 
 jobs:
-  commitlint:
-    name: Commit message validation
+  ci:
+    name: Commit validation, build and test 
 
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [22] # Only one, so it doesn't run multiple times
+        node-version: [22]
     
     steps:
       - name: Checkout repository
@@ -27,66 +27,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'pnpm' # Needed for parallel jobs optimization
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Validate commit messages
-        run: npx commitlint --from=origin/${{ github.base_ref }} --to=HEAD --verbose
-  
-  build:
-    name: Build application
-    
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [22, 24]
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-      
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'pnpm' # Needed for parallel jobs optimization
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npx commitlint --from=origin/${{ github.event.pull_request.base.sha }} --to=HEAD --verbose
 
       - name: Build project
         run: pnpm build
-
-  test:
-    name: Run tests suite
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [22, 24]
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-      
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'pnpm' # Needed for parallel jobs optimization
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
 
       - name: Run tests
         run: pnpm test --if-present

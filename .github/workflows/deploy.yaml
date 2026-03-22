@@ -1,0 +1,92 @@
+name: Deploy
+
+on:
+  push:
+    branches: [develop, main]
+
+concurrency:
+  group: cloudflare-pages-production
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  deployments: write
+
+jobs:
+  deploy:
+    name: Deploy app to cloudflare
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [22] # Only one, so it doesn't run multiple times
+
+    environment: ${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+      
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build project
+        run: pnpm build
+
+      - name: Set project name
+        run: echo "PROJECT_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+
+      - name: Ensure Pages Project Exists
+        run: |
+          if ! wrangler pages project list | grep -q "$PROJECT_NAME"; then
+            echo "Creating project: $PROJECT_NAME"
+            wrangler pages project create "$PROJECT_NAME"
+          else
+            echo "Project already exists"
+          fi
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+      - name: Deploy to Cloudflare Pages
+        id: deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          npx wrangler pages deploy .output/public \
+            --project-name="${GITHUB_REPOSITORY#*/}" \
+            --branch="${GITHUB_REF_NAME}" \
+            --json > deploy.json
+          
+          echo "url=$(jq -r '.deployment_url' deploy.json)" >> $GITHUB_OUTPUT
+
+      - name: Comment PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        env:
+          DEPLOY_ENV: ${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}
+          URL: ${{ steps.deploy.outputs.url }}
+        with:
+          script: |
+            const env = process.env.DEPLOY_ENV;
+            const url = process.env.URL;
+
+            const label = env === "production"
+              ? "Production deployed"
+              : "Preview deployed";
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request?.number,
+              body: `${label}\n\n${url}`
+            });
