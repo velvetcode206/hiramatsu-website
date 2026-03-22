@@ -2,7 +2,6 @@
   "name": "hiramatsu-website",
   "type": "module",
   "private": true,
-  "version": "0.0.0",
   "engines": {
     "node": ">=22.22.1",
     "pnpm": ">=10.32.1"
