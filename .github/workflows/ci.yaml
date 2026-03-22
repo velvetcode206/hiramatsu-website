@@ -33,7 +33,11 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Validate commit messages
-        run: npx commitlint --from=origin/${{ github.event.pull_request.base.sha }} --to=HEAD --verbose
+        run: |
+          npx commitlint \
+            --from=origin/${{ github.event.pull_request.base.ref }} \
+            --to=HEAD \
+            --verbose
 
       - name: Build project
         run: pnpm build
