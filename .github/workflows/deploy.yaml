@@ -45,30 +45,45 @@ jobs:
 
       - name: Deploy to Cloudflare Pages        
         uses: cloudflare/wrangler-action@v3     
-        id: deploy   
+        id: cloudflare-deploy   
         with:          
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           command: pages deploy dist --project-name="${{ github.event.repository.name }}" --branch="${{ github.ref_name }}"
 
-      - name: Comment PR
-        if: github.event_name == 'pull_request'
+      - name: Create GitHub deployment
+        id: github-deploy
         uses: actions/github-script@v7
-        env:
-          DEPLOY_ENV: ${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}
-          URL: ${{ steps.deploy.outputs.deployment-url }}
         with:
           script: |
-            const env = process.env.DEPLOY_ENV;
-            const url = process.env.URL;
+            const env = "${{ github.ref_name == 'main' && 'production' || 'development' }}";
 
-            const label = env === "production"
-              ? "Production deployed"
-              : "Preview deployed";
-
-            await github.rest.issues.createComment({
+            const res = await github.rest.repos.createDeployment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: context.payload.pull_request?.number,
-              body: `${label}\n\n${url}`
+              ref: context.sha,
+              environment: env,
+              auto_merge: false,
+              required_contexts: []
+            });
+
+            return res.data.id;
+
+      - name: Set deployment status with URL
+        uses: actions/github-script@v7
+        env:
+          DEPLOYMENT_ID: ${{ steps.github-deploy.outputs.result }}
+          URL: ${{ steps.cloudflare-deploy.outputs.deployment-url }}
+        with:
+          script: |
+            const deploymentId = process.env.DEPLOYMENT_ID;
+            const url = process.env.URL;
+
+            await github.rest.repos.createDeploymentStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              deployment_id: Number(deploymentId),
+              state: "success",
+              environment_url: url,
+              description: "Cloudflare Pages deployment"
             });
