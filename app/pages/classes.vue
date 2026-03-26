@@ -1,9 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <div>
+    <h1>Classes</h1>
+  </div>
 </template>
 
 <style scoped></style>
