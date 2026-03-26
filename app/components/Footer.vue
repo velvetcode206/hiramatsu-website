@@ -1,10 +1,10 @@
 <script setup lang="ts">
-interface Link {
+interface ILink {
   name: string
   label: string
 }
 
-const links: Link[] = [
+const links: ILink[] = [
   {
     name: '/',
     label: 'Facebook',
@@ -33,4 +33,4 @@ const links: Link[] = [
   </div>
 </template>
 
-<style></style>
+<style scoped></style>

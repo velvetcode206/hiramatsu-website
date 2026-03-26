@@ -16,4 +16,4 @@ defineProps<{ error: NuxtError }>()
   </NuxtLayout>
 </template>
 
-<style></style>
+<style scoped></style>

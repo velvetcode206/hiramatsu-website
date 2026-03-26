@@ -1,10 +1,10 @@
 <script setup lang="ts">
-interface Link {
+interface ILink {
   name: string
   label: string
 }
 
-const links: Link[] = [
+const links: ILink[] = [
   {
     name: '/',
     label: 'Home',
@@ -30,6 +30,13 @@ const links: Link[] = [
 
 <template>
   <div>
+    <NuxtImg
+      src="/logo.png"
+      alt="Musashi"
+      width="64px"
+      height="64px"
+      preload
+    />
     <h1>Associação Hiramatsu</h1>
     <ul>
       <li v-for="link in links" :key="link.name">
@@ -41,4 +48,4 @@ const links: Link[] = [
   </div>
 </template>
 
-<style></style>
+<style scoped></style>
