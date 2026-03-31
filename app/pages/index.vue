@@ -1,21 +1,16 @@
 <script setup lang="ts">
-interface IShowcaseImage {
-  src: string
-  alt: string
-}
-
-const showcaseImages: IShowcaseImage[] = [
+const schoolShowcase: IImageData[] = [
   {
-    src: 'showcase-1.jpg',
-    alt: 'showcase-1',
+    src: '/home/school/1.jpg',
+    alt: 'school-1',
   },
   {
-    src: 'showcase-2.png',
-    alt: 'showcase-2',
+    src: '/home/school/2.png',
+    alt: 'school-2',
   },
   {
-    src: 'showcase-3.jpg',
-    alt: 'showcase-3',
+    src: '/home/school/3.jpg',
+    alt: 'school-3',
   },
 ]
 </script>
@@ -26,7 +21,8 @@ const showcaseImages: IShowcaseImage[] = [
     <p><i>Captivating image that should show what the school is about...</i></p>
     <NuxtImg
       src="/home/hero.jpg"
-      alt="Musashi"
+      alt="hero"
+      class="img-hero"
       sizes="sm:100vw lg:1280px"
       preload
     />
@@ -45,22 +41,19 @@ const showcaseImages: IShowcaseImage[] = [
     <div>
       <p><i>One or more images showcasing the different aspects of the school...</i></p>
       <NuxtImg
-        v-for="image in showcaseImages"
-        :key="image.src"
-        :src="`/home/${image.src}`"
-        :alt="image.alt"
+        v-for="item in schoolShowcase"
+        :key="item.src"
+        :src="item.src"
+        :alt="item.alt"
+        class="img-hero"
         sizes="sm:100vw lg:1280px"
       />
     </div>
     <div>
-      <h2>Call to action, a text incentivizing to join the school.</h2>
+      <h2>Call to action, a text to incentivize people to join the school.</h2>
       <p>Fusce varius augue dolor, non laoreet nisi egestas eu. Phasellus odio justo, consequat ac cursus non, finibus nec dolor. Sed blandit sodales enim.</p>
     </div>
   </div>
 </template>
 
-<style scoped>
-img {
-  width: 100%;
-}
-</style>
+<style scoped></style>
