@@ -31,7 +31,7 @@ const links: ILink[] = [
 <template>
   <div>
     <NuxtImg
-      src="/logo.png"
+      src="/logo.jpg"
       alt="Musashi"
       width="64px"
       height="64px"
