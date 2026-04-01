@@ -70,6 +70,7 @@ const senseiShowcase: IImageData[] = [
       />
     </div>
     <div>
+      <h1>Souke</h1>
       <h2>Details about the current Souke (宗家), the head of the association. Where it studied the arts, from whom and how he came to be the head. Also other personal accomplishments.</h2>
       <p>Morbi neque sapien, suscipit id auctor id, aliquet id felis. Sed risus mauris, convallis vitae lorem eu, imperdiet scelerisque lacus. Ut elit nunc, feugiat sed sodales scelerisque, faucibus id purus.</p>
       <p>Etiam tristique est varius porttitor lacinia. Nulla sed interdum ante, vestibulum mattis leo. Donec ullamcorper felis sit amet ligula egestas, eu laoreet arcu efficitur.</p>
@@ -88,6 +89,7 @@ const senseiShowcase: IImageData[] = [
       </div>
     </div>
     <div>
+      <h1>History</h1>
       <h2>A small description and historical timeline of all the other schools and important figures that brought hiramatsu to fruition.</h2>
       <p>Pellentesque eu nibh a est suscipit vehicula eu sed dui. Etiam iaculis ligula eget libero ultricies, ut fermentum nunc elementum. Aliquam quis nibh nisl. Nulla facilisi.</p>
       <p>estibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec mollis sapien id vehicula commodo. Nullam sed lectus quis est placerat pulvinar.</p>
@@ -106,6 +108,7 @@ const senseiShowcase: IImageData[] = [
       </div>
     </div>
     <div>
+      <h1>Senseis</h1>
       <h2>A small note of the importance of being a sensei and its responsabilities, then a list of the current senseis.</h2>
       <p>Duis nec rhoncus metus. Donec elementum arcu ac lorem pretium, et tristique purus luctus. Ut commodo, orci eu mattis pharetra, justo dolor volutpat quam, a vestibulum arcu ex et metus.</p>
       <p>Integer rutrum hendrerit risus, nec faucibus enim elementum at. Nulla maximus consectetur nibh, condimentum varius nulla. Proin lacinia odio sit amet ipsum posuere dapibus.</p>

@@ -5,7 +5,7 @@ const schoolShowcase: IImageData[] = [
     alt: 'school-1',
   },
   {
-    src: '/home/school/2.png',
+    src: '/home/school/2.jpg',
     alt: 'school-2',
   },
   {
@@ -17,15 +17,17 @@ const schoolShowcase: IImageData[] = [
 
 <template>
   <div>
-    <h1>Home</h1>
-    <p><i>Captivating image that should show what the school is about...</i></p>
-    <NuxtImg
-      src="/home/hero.jpg"
-      alt="hero"
-      class="img-hero"
-      sizes="sm:100vw lg:1280px"
-      preload
-    />
+    <div>
+      <h1>Home</h1>
+      <p><i>Captivating image that should show what the school is about...</i></p>
+      <NuxtImg
+        src="/home/hero.jpg"
+        alt="hero"
+        class="img-hero"
+        sizes="sm:100vw lg:1280px"
+        preload
+      />
+    </div>
     <div>
       <h2>Small description about the school complementing the image.</h2>
       <p>Fusce varius augue dolor, non laoreet nisi egestas eu. Phasellus odio justo, consequat ac cursus non, finibus nec dolor. Sed blandit sodales enim.</p>
