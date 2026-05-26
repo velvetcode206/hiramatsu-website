@@ -202,7 +202,7 @@ function getFormattedTime(schedule: IClassSchedule) {
           <p>Mensalidade: R${{ item.enrollmentFee }},00</p>
           <div>
             <div v-for="schedule in item.schedules" :key="`${schedule.weekDay}-${schedule.timeStart}-${schedule.timeEnd}`">
-              <p>{{ schedule.weekDay }}</p>
+              <p>{{ $t(`weekdays.${schedule.weekDay}`) }}</p>
               <p>{{ schedule.inPerson }}</p>
               <p>Horário: {{ getFormattedTime(schedule) }}</p>
             </div>
