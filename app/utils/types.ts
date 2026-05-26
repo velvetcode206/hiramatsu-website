@@ -10,6 +10,18 @@ export interface IImageData {
 
 export type SenseiId = typeof SENSEI_IDS[keyof typeof SENSEI_IDS]
 
+export interface ISocials {
+  facebook?: string
+  instagram?: string
+  tiktok?: string
+}
+
+export interface IContacts {
+  phones?: string[]
+  emails?: string[]
+  socials?: ISocials
+}
+
 export interface ISensei {
   id: SenseiId
   name: string
@@ -17,15 +29,7 @@ export interface ISensei {
     profile: IImageData
     showcase: IImageData
   }
-  contacts: {
-    phones: string[]
-    emails?: string[]
-    socials?: {
-      facebook?: string
-      instagram?: string
-      tiktok?: string
-    }
-  }
+  contacts: IContacts
 }
 
 export type DojoId = typeof DOJO_IDS[keyof typeof DOJO_IDS]
