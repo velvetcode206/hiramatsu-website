@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex flex-col min-h-dvh text-primary bg-secondary">
+  <div class="flex flex-col min-h-dvh">
     <Navbar />
     <slot />
     <Footer />

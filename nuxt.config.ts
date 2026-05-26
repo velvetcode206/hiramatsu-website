@@ -2,8 +2,13 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   nitro: { preset: 'cloudflare-pages' },
-  css: ['~/assets/css/main.css'],
-  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxtjs/i18n', '@nuxtjs/tailwindcss'],
+  css: ['~/assets/css/main.css', '~/assets/css/font.css'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/image',
+    '@nuxtjs/i18n',
+    '@nuxtjs/tailwindcss',
+  ],
   eslint: { config: { standalone: false } },
   image: { dir: 'assets/images', quality: 70 },
   i18n: {

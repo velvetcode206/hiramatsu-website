@@ -18,7 +18,9 @@ const schoolShowcase: IImageData[] = [
 <template>
   <div>
     <div>
-      <h1>Home</h1>
+      <h1>
+        Home
+      </h1>
       <p><i>Captivating image that should show what the school is about...</i></p>
       <NuxtImg
         src="/home/hero.jpg"

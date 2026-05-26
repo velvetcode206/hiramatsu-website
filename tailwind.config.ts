@@ -8,6 +8,10 @@ export default <Partial<Config>>{
         secondary: { DEFAULT: '#eeeeee' },
         accent: { DEFAULT: '#4f284b' },
       },
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+        syuku: ['Yuji Syuku', 'serif'],
+      },
     },
   },
 }
