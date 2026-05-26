@@ -27,15 +27,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
-      
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
+          cache: pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -43,10 +43,10 @@ jobs:
       - name: Build project
         run: pnpm build
 
-      - name: Deploy to Cloudflare Pages        
-        uses: cloudflare/wrangler-action@v3     
-        id: cloudflare-deploy   
-        with:          
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        id: cloudflare-deploy
+        with:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           command: pages deploy dist --project-name="${{ github.event.repository.name }}" --branch="${{ github.ref_name }}"
