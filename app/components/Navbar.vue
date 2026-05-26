@@ -36,7 +36,7 @@ const links: ILink[] = [
 </script>
 
 <template>
-  <div>
+  <div class="top-0 sticky flex">
     <NuxtImg
       src="/logo.jpg"
       alt="Musashi"

@@ -21,7 +21,7 @@ const links: ILink[] = [
 </script>
 
 <template>
-  <div>
+  <div class="flex mt-auto">
     <ul>
       <li v-for="link in links" :key="link.name">
         <NuxtLink :to="link.name">
