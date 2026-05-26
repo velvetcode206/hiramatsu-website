@@ -13,9 +13,3 @@ export const ARTS = {
   BOJUTSU: 'bojutsu',
   DORYU: 'doryu',
 } as const
-
-export const SENSEIS = {
-  RUBEN_SPINOZA: 'ruben-espinoza',
-  PAULO_KOMATSU: 'paulo-komatsu',
-  BRUNO_CONTARDI: 'bruno-contardi',
-} as const

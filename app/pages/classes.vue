@@ -6,14 +6,7 @@ const classes: IClass[] = [
     contacts: [
       '+55 (11) 99710-1979',
     ],
-    instructor: {
-      name: SENSEIS.RUBEN_SPINOZA,
-      image: {
-        src: `/sensei/${SENSEIS.RUBEN_SPINOZA}/classes.png`,
-        alt: `Sensei ${SENSEIS.RUBEN_SPINOZA}`,
-        text: 'Descrição do Sensei.',
-      },
-    },
+    sensei: SENSEIS_MAP[SENSEI_IDS.RUBEN_SPINOZA],
     art: ARTS.KENJUTSU,
     enrollmentFee: 200,
     monthlyFee: 260,
@@ -52,14 +45,7 @@ const classes: IClass[] = [
     contacts: [
       '+55 (11) 97329-9660',
     ],
-    instructor: {
-      name: SENSEIS.PAULO_KOMATSU,
-      image: {
-        src: `/sensei/${SENSEIS.PAULO_KOMATSU}/classes.png`,
-        alt: `Sensei ${SENSEIS.PAULO_KOMATSU}`,
-        text: 'Descrição do Sensei.',
-      },
-    },
+    sensei: SENSEIS_MAP[SENSEI_IDS.PAULO_KOMATSU],
     art: ARTS.BOJUTSU,
     enrollmentFee: 200,
     monthlyFee: 260,
@@ -99,14 +85,7 @@ const classes: IClass[] = [
     contacts: [
       '+55 (11) 93467-5745',
     ],
-    instructor: {
-      name: SENSEIS.BRUNO_CONTARDI,
-      image: {
-        src: `/sensei/${SENSEIS.BRUNO_CONTARDI}/classes.png`,
-        alt: `Sensei ${SENSEIS.BRUNO_CONTARDI}`,
-        text: 'Descrição do Sensei.',
-      },
-    },
+    sensei: SENSEIS_MAP[SENSEI_IDS.BRUNO_CONTARDI],
     art: ARTS.KENJUTSU,
     enrollmentFee: 200,
     monthlyFee: 260,
@@ -178,15 +157,15 @@ function getFormattedTime(schedule: IClassSchedule) {
     <div>
       <div v-for="item in keyedList" :key="item.key">
         <div>
-          <p>{{ item.instructor.name }}</p>
+          <p>{{ item.sensei.name }}</p>
           <div>
             <NuxtImg
-              :src="item.instructor.image.src"
-              :alt="item.instructor.image.alt"
+              :src="item.sensei.images.profile.src"
+              :alt="item.sensei.images.profile.alt"
               class="img-profile"
               sizes="sm:100vw lg:512px"
             />
-            <p>{{ item.instructor.image.text }}</p>
+            <p>{{ item.sensei.images.profile.text }}</p>
           </div>
         </div>
         <div>

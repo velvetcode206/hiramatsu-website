@@ -6,3 +6,13 @@ weekdays:
   thursday: Quinta-feira
   friday: Sexta-feira
   saturday: Sábado
+arts:
+  kenjutsu:
+    name: Kenjutsu
+    description: A arte da espada samurai.
+  bojutsu:
+    name: Bojutsu
+    description: A arte do bastão longo.
+  doryu:
+    name: Doryu
+    description: A arte da meditação em movimento.
