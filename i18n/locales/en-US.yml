@@ -1,0 +1,18 @@
+weekdays:
+  sunday: Sunday
+  monday: Monday
+  tuesday: Tuesday
+  wednesday: Wednesday
+  thursday: Thursday
+  friday: Friday
+  saturday: Saturday
+arts:
+  kenjutsu:
+    name: Kenjutsu
+    description: The art of the samurai sword.
+  bojutsu:
+    name: Bojutsu
+    description: The art of the long staff.
+  doryu:
+    name: Doryu
+    description: The art of meditation in motion.

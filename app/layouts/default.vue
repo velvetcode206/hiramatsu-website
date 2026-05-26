@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>
+  <div class="flex flex-col">
     <h2>Layout</h2>
     <Navbar />
     <slot />
