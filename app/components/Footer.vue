@@ -17,7 +17,7 @@ const links: ILink[] = [
 
 <template>
   <div class="flex mt-auto bg-white shadow-sm">
-    <div class="flex flex-col gap-4 px-4 py-8 lg:gap-8 lg:px-8 lg:py-16 lg:w-full lg:max-w-7xl lg:mx-auto">
+    <div class="flex flex-col gap-4 px-4 py-8 lg:gap-8 lg:px-8 lg:py-16 desktop-container">
       <ul class="flex gap-2 lg:gap-4">
         <li v-for="link in links" :key="link.to">
           <NuxtLink

@@ -34,8 +34,8 @@ onClickOutside(target, () => toggleShowMobileMenu(false))
 </script>
 
 <template>
-  <div ref="target" class="top-0 sticky flex flex-col bg-white shadow-sm">
-    <div class="flex justify-between items-center gap-2 p-2 lg:justify-start lg:gap-8 lg:w-full lg:max-w-7xl lg:mx-auto lg:p-8">
+  <div ref="target" class="top-0 sticky z-10 flex flex-col bg-white shadow-sm">
+    <div class="flex justify-between items-center gap-2 p-2 lg:justify-start lg:gap-8 lg:p-8 desktop-container">
       <NuxtImg
         src="/logo.jpg"
         alt="Musashi"

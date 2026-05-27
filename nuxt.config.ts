@@ -30,7 +30,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
   ],
   eslint: { config: { standalone: false } },
-  image: { dir: 'assets/images', quality: 70 },
+  image: { dir: 'assets/images', quality: 80 },
   i18n: {
     defaultLocale: 'pt-BR',
     locales: [

@@ -10,6 +10,14 @@ html {
   vertical-align: middle;
 }
 
+.desktop-container {
+  @apply lg:w-full lg:max-w-7xl lg:mx-auto;
+}
+
+.detail-message {
+  @apply p-2 text-white bg-accent rounded-md opacity-80;
+}
+
 .img-hero {
   width: 100%;
 }
