@@ -1,0 +1,33 @@
+title: 平松協会
+weekdays:
+  sunday: 日曜日
+  monday: 月曜日
+  tuesday: 火曜日
+  wednesday: 水曜日
+  thursday: 木曜日
+  friday: 金曜日
+  saturday: 同様日
+arts:
+  kenjutsu:
+    name: 剣術
+    description: 武士の刀術。
+  bojutsu:
+    name: 棒術
+    description: 長棒を用いる武術。
+  doryu:
+    name: 動流
+    description: 動きの中で行う瞑想の術。
+pages:
+  home:
+    title: ホーム
+  about:
+    title: 協会概要
+  arts:
+    title: 武術
+  classes:
+    title: 稽古
+  contact:
+    title: お問い合わせ
+components:
+  footer:
+    rights: © 2008-2026 平松協会. 無断転載を禁じます。

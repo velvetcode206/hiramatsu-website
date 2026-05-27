@@ -1,3 +1,23 @@
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply text-primary bg-secondary font-roboto;
+}
+
+/* Fixes @nuxt/icon bottom margin */
+.iconify {
+  vertical-align: middle;
+}
+
+.desktop-container {
+  @apply lg:w-full lg:max-w-7xl lg:mx-auto;
+}
+
+.detail-message {
+  @apply p-2 text-white bg-accent rounded-md opacity-80;
+}
+
 .img-hero {
   width: 100%;
 }
