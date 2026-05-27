@@ -3,8 +3,8 @@ export type WeekDay = typeof WEEK_DAYS[keyof typeof WEEK_DAYS]
 export type Art = typeof ARTS[keyof typeof ARTS]
 
 export interface ILink {
-  route: string
-  label: string
+  to: string
+  name: string
 }
 
 export interface IImageData {

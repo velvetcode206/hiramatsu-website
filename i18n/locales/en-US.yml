@@ -28,3 +28,6 @@ pages:
     title: Classes
   contact:
     title: Contact
+components:
+  footer:
+    rights: © 2008-2026 Hiramatsu Association. All rights reserved.

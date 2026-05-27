@@ -1,24 +1,24 @@
 <script setup lang="ts">
 const links: ILink[] = [
   {
-    route: '/',
-    label: 'home',
+    to: '/',
+    name: 'home',
   },
   {
-    route: 'about',
-    label: 'about',
+    to: 'about',
+    name: 'about',
   },
   {
-    route: 'arts',
-    label: 'arts',
+    to: 'arts',
+    name: 'arts',
   },
   {
-    route: 'classes',
-    label: 'classes',
+    to: 'classes',
+    name: 'classes',
   },
   {
-    route: 'contact',
-    label: 'contact',
+    to: 'contact',
+    name: 'contact',
   },
 ]
 
@@ -52,13 +52,13 @@ onClickOutside(target, () => toggleShowMobileMenu(false))
       </button>
       <!-- DESKTOP MENU -->
       <ul class="hidden gap-2 items-center ms-auto lg:flex">
-        <li v-for="link in links" :key="link.route">
+        <li v-for="link in links" :key="link.to">
           <NuxtLink
-            :to="$localePath(link.route)"
+            :to="$localePath(link.to)"
             class="px-4 py-2 text-2xl font-syuku transition-colors rounded-sm border-b-2 border-white hover:text-accent"
             exact-active-class="!border-accent text-accent pointer-events-none"
           >
-            {{ $t(`pages.${link.label}.title`) }}
+            {{ $t(`pages.${link.name}.title`) }}
           </NuxtLink>
         </li>
         <LanguageSelector />
@@ -69,16 +69,16 @@ onClickOutside(target, () => toggleShowMobileMenu(false))
       <ul v-if="showMobileMenu" class="flex flex-col">
         <li
           v-for="link in links"
-          :key="link.route"
+          :key="link.to"
           class="px-2 py-2"
         >
           <NuxtLink
-            :to="$localePath(link.route)"
+            :to="$localePath(link.to)"
             class="px-2 text-xl font-syuku rounded-sm border-l-2 border-white hover:text-accent active:text-accent"
             exact-active-class="font-bold text-accent !border-accent pointer-events-none"
             @click="toggleShowMobileMenu()"
           >
-            {{ $t(`pages.${link.label}.title`) }}
+            {{ $t(`pages.${link.name}.title`) }}
           </NuxtLink>
         </li>
         <LanguageSelector />

@@ -28,3 +28,6 @@ pages:
     title: Turmas
   contact:
     title: Contato
+components:
+  footer:
+    rights: © 2008-2026 Associação Hiramatsu. Todos os direitos reservados.

@@ -28,3 +28,6 @@ pages:
     title: 稽古
   contact:
     title: お問い合わせ
+components:
+  footer:
+    rights: © 2008-2026 平松協会. 無断転載を禁じます。
