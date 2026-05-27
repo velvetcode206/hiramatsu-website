@@ -49,5 +49,11 @@
   "i18n-ally.localesPaths": [
     "i18n",
     "i18n/locales"
-  ]
+  ],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  }
 }

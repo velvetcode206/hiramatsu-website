@@ -1,3 +1,4 @@
+title: Associação Hiramatsu
 weekdays:
   sunday: Domingo
   monday: Segunda-feira
@@ -16,3 +17,17 @@ arts:
   doryu:
     name: Doryu
     description: A arte da meditação em movimento.
+pages:
+  home:
+    title: Início
+  about:
+    title: Sobre
+  arts:
+    title: Artes
+  classes:
+    title: Turmas
+  contact:
+    title: Contato
+components:
+  footer:
+    rights: © 2008-2026 Associação Hiramatsu. Todos os direitos reservados.

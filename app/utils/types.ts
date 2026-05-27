@@ -2,6 +2,11 @@ export type WeekDay = typeof WEEK_DAYS[keyof typeof WEEK_DAYS]
 
 export type Art = typeof ARTS[keyof typeof ARTS]
 
+export interface ILink {
+  to: string
+  name: string
+}
+
 export interface IImageData {
   src: string
   alt: string
