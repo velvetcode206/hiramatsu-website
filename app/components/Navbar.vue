@@ -39,12 +39,12 @@ onClickOutside(target, () => toggleShowMobileMenu(false))
       <NuxtImg
         src="/logo.jpg"
         alt="Musashi"
-        width="128"
-        height="128"
+        width="256"
+        height="256"
         preload
         class="w-12 h-12 lg:w-16 lg:h-16"
       />
-      <h1 class="leading-none text-center text-2xl font-bold font-syuku lg:text-4xl lg:text-start">
+      <h1 class="leading-none text-center text-2xl font-bold lg:text-4xl lg:text-start">
         {{ $t('title') }}
       </h1>
       <button class="lg:hidden" @click="toggleShowMobileMenu()">
@@ -55,7 +55,7 @@ onClickOutside(target, () => toggleShowMobileMenu(false))
         <li v-for="link in links" :key="link.to">
           <NuxtLink
             :to="$localePath(link.to)"
-            class="px-4 py-2 text-2xl font-syuku transition-colors rounded-sm border-b-2 border-white hover:text-accent"
+            class="px-4 py-2 text-2xl transition-colors rounded-sm border-b-2 border-white hover:text-accent"
             exact-active-class="!border-accent text-accent pointer-events-none"
           >
             {{ $t(`pages.${link.name}.title`) }}
@@ -74,7 +74,7 @@ onClickOutside(target, () => toggleShowMobileMenu(false))
         >
           <NuxtLink
             :to="$localePath(link.to)"
-            class="px-2 text-xl font-syuku rounded-sm border-l-2 border-white hover:text-accent active:text-accent"
+            class="px-2 text-xl rounded-sm border-l-2 border-white hover:text-accent active:text-accent"
             exact-active-class="font-bold text-accent !border-accent pointer-events-none"
             @click="toggleShowMobileMenu()"
           >

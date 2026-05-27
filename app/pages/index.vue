@@ -24,34 +24,40 @@ const schoolShowcase: IImageData[] = [
       <NuxtImg
         src="/home/hero.jpg"
         alt="Hero"
+        width="1920"
+        height="1080"
+        sizes="sm:100vw"
         preload
-        class="w-full object-cover max-h-[512px]"
+        class="w-full object-cover h-[512px]"
       />
     </div>
     <div class="flex flex-col gap-4 p-4 lg:p-8 desktop-container">
       <p class="detail-message text-base">
         Pequena descrição sobre a escola complementando a imagem...
       </p>
-      <p class="text-lg indent-8 lg:text-xl lg:leading-10">
-        Nulla facilisi. Nullam fringilla massa mauris, quis viverra mi pharetra vitae. Curabitur tincidunt tristique aliquet. In in aliquam nulla, non molestie ante. Vestibulum ligula nisl, ultricies vel arcu sit amet, luctus euismod sapien. Aenean quis aliquet mi. Nulla at urna velit. Donec dignissim massa sit amet lacus ornare ornare. Pellentesque et iaculis risus. Mauris ullamcorper nisl ac lorem sodales feugiat. Sed elementum ante massa, in interdum leo gravida a. Duis metus elit, ullamcorper vel metus ut, condimentum hendrerit ante. Quisque in orci nisl. Donec pharetra elit condimentum, pharetra ante vel, aliquet turpis.
+      <p class="text-xl indent-8 lg:text-2xl lg:leading-normal">
+        Nulla facilisi. Nullam fringilla massa mauris, quis viverra mi pharetra vitae. Curabitur tincidunt tristique aliquet. In in aliquam nulla, non molestie ante. Vestibulum ligula nisl, ultricies vel arcu sit amet, luctus euismod sapien. Aenean quis aliquet mi. Nulla at urna velit. Donec dignissim massa sit amet lacus ornare ornare. Pellentesque et iaculis risus. Mauris ullamcorper nisl ac lorem sodales feugiat. Sed elementum ante massa, in interdum leo gravida a.
       </p>
     </div>
     <div class="z-0 relative flex flex-col shadow-inner">
-      <p class="z-10 px-6 py-12 text-2xl text-center font-syuku font-bold lg:px-12 lg:py-24 lg:text-6xl desktop-container">
+      <p class="z-10 px-6 py-12 text-2xl text-center font-bold lg:px-12 lg:py-24 lg:text-6xl lg:leading-tight desktop-container">
         Uma citação histórica que serve de base para a escola, com um belo pano de fundo...
       </p>
       <NuxtImg
         src="/home/painting.jpg"
         alt="Painting"
+        width="1080"
+        height="675"
+        sizes="sm:100vw"
         preload
-        class="absolute w-full h-full object-cover opacity-50 max-h-[512px] "
+        class="absolute w-full h-full object-cover opacity-40"
       />
     </div>
     <div class="flex flex-col gap-4 p-4 lg:p-8 desktop-container">
       <p class="detail-message text-base">
         Chamada à ação, um texto para incentivar as pessoas a se inscreverem na escola...
       </p>
-      <p class="text-lg indent-8 lg:text-xl lg:leading-10">
+      <p class="text-xl indent-8 lg:text-2xl lg:leading-normal">
         Morbi vel interdum magna. Mauris vel nibh maximus, maximus nunc a, interdum ipsum. In purus ligula, finibus non rutrum id, semper ut arcu. Sed vestibulum risus velit, vitae venenatis velit porttitor et. Donec at porttitor erat. Nullam eu rutrum eros justo.
       </p>
     </div>
@@ -64,7 +70,10 @@ const schoolShowcase: IImageData[] = [
         :key="item.src"
         :src="item.src"
         :alt="item.alt"
-        class="w-full object-cover object-top max-h-[512px]"
+        width="512"
+        height="512"
+        sizes="sm:100vw lg:33vw"
+        class="w-full object-cover h-[512px]"
       />
     </div>
   </div>
