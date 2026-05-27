@@ -1,61 +1,89 @@
 <script setup lang="ts">
-const {
-  locale,
-  locales,
-  setLocale,
-
-} = useI18n()
-
-interface ILink {
-  name: string
-  label: string
-}
-
 const links: ILink[] = [
   {
-    name: '/',
-    label: 'Home',
+    route: '/',
+    label: 'home',
   },
   {
-    name: 'about',
-    label: 'About',
+    route: 'about',
+    label: 'about',
   },
   {
-    name: 'arts',
-    label: 'Arts',
+    route: 'arts',
+    label: 'arts',
   },
   {
-    name: 'classes',
-    label: 'Classes',
+    route: 'classes',
+    label: 'classes',
   },
   {
-    name: 'contact',
-    label: 'Contact',
+    route: 'contact',
+    label: 'contact',
   },
 ]
+
+const showMobileMenu = ref(false)
+
+function toggleShowMobileMenu(value?: boolean) {
+  showMobileMenu.value = value ?? !showMobileMenu.value
+}
+
+const target = useTemplateRef('target')
+
+onClickOutside(target, () => toggleShowMobileMenu(false))
 </script>
 
 <template>
-  <div class="top-0 sticky flex">
-    <NuxtImg
-      src="/logo.jpg"
-      alt="Musashi"
-      width="64px"
-      height="64px"
-      preload
-    />
-    <h1>Associação Hiramatsu</h1>
-    <ul>
-      <li v-for="link in links" :key="link.name">
-        <NuxtLink :to="$localePath(link.name)">
-          {{ link.label }}
-        </NuxtLink>
-      </li>
-    </ul>
-    <p>{{ locale }}</p>
-    <button v-for="item in locales" :key="item.code" @click="setLocale(item.code)">
-      {{ item.name }}
-    </button>
+  <div ref="target" class="top-0 sticky flex flex-col bg-white shadow-sm">
+    <div class="flex justify-between items-center gap-2 p-2 lg:justify-start lg:gap-8 lg:w-full lg:max-w-7xl lg:mx-auto lg:p-8">
+      <NuxtImg
+        src="/logo.jpg"
+        alt="Musashi"
+        width="128"
+        height="128"
+        preload
+        class="w-12 h-12 lg:w-16 lg:h-16"
+      />
+      <h1 class="leading-none text-center text-2xl font-bold font-syuku lg:text-4xl lg:text-start">
+        {{ $t('title') }}
+      </h1>
+      <button class="lg:hidden" @click="toggleShowMobileMenu()">
+        <Icon name="custom:menu" class="text-5xl transition-transform" :class="{ '-rotate-90 opacity-50': showMobileMenu }" />
+      </button>
+      <!-- DESKTOP MENU -->
+      <ul class="hidden gap-2 items-center ms-auto lg:flex">
+        <li v-for="link in links" :key="link.route">
+          <NuxtLink
+            :to="$localePath(link.route)"
+            class="px-4 py-2 text-2xl font-syuku transition-colors rounded-sm border-b-2 border-white hover:text-accent"
+            exact-active-class="!border-accent text-accent pointer-events-none"
+          >
+            {{ $t(`pages.${link.label}.title`) }}
+          </NuxtLink>
+        </li>
+        <LanguageSelector />
+      </ul>
+    </div>
+    <!-- MOBILE MENU -->
+    <Transition name="fade-up">
+      <ul v-if="showMobileMenu" class="flex flex-col">
+        <li
+          v-for="link in links"
+          :key="link.route"
+          class="px-2 py-2"
+        >
+          <NuxtLink
+            :to="$localePath(link.route)"
+            class="px-2 text-xl font-syuku rounded-sm border-l-2 border-white hover:text-accent active:text-accent"
+            exact-active-class="font-bold text-accent !border-accent pointer-events-none"
+            @click="toggleShowMobileMenu()"
+          >
+            {{ $t(`pages.${link.label}.title`) }}
+          </NuxtLink>
+        </li>
+        <LanguageSelector />
+      </ul>
+    </Transition>
   </div>
 </template>
 

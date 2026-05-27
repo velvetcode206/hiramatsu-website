@@ -1,6 +1,13 @@
 html {
   text-rendering: optimizeLegibility;
-  @apply text-primary bg-secondary antialiased font-roboto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply text-primary bg-secondary font-roboto;
+}
+
+/* Fixes @nuxt/icon bottom margin */
+.iconify {
+  vertical-align: middle;
 }
 
 .img-hero {

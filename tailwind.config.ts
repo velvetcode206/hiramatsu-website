@@ -6,7 +6,7 @@ export default <Partial<Config>>{
       colors: {
         primary: { DEFAULT: '#222222' },
         secondary: { DEFAULT: '#eeeeee' },
-        accent: { DEFAULT: '#4f284b' },
+        accent: { DEFAULT: '#592C63' },
       },
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],

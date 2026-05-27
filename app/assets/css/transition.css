@@ -1,0 +1,32 @@
+/* FADE */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* FADE UP */
+/* FIXME: Should not be using 100dvh, need to find a way to calculate the real size. */
+.fade-up-enter-active,
+.fade-up-leave-active {
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  overflow: hidden;
+}
+.fade-up-enter-from,
+.fade-up-leave-to {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-8px);
+}
+.fade-up-enter-to,
+.fade-up-leave-from {
+  max-height: 100dvh;
+  opacity: 1;
+  transform: translateY(0);
+}
