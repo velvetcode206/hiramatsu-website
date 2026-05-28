@@ -19,16 +19,16 @@ const availableLocales = computed(() => locales.value.filter(locale => locale.co
 </script>
 
 <template>
-  <div ref="target" class="relative flex flex-col gap-4 py-4">
-    <button class="flex items-center gap-2 px-4" @click="toggleShowLanguageMenu()">
+  <div ref="target" class="relative flex flex-col">
+    <button class="flex items-center gap-2 p-2 lg:p-4" @click="toggleShowLanguageMenu()">
       <Icon :name="`custom:flags-${localeProperties.code}`" class="text-2xl" />
-      <span class="font-semibold lg:hidden">{{ localeProperties.name }}</span>
+      <span class="font-medium lg:hidden">{{ localeProperties.name }}</span>
       <Icon name="custom:chevron-down" class="ms-auto text-2xl transition-transform" :class="{ 'rotate-180 opacity-50': showLanguageMenu }" />
     </button>
     <Transition name="fade-up">
-      <div v-if="showLanguageMenu" class="flex flex-col gap-4 px-4 lg:absolute lg:top-full lg:right-0 lg:py-4 lg:bg-white lg:rounded-sm">
+      <div v-if="showLanguageMenu" class="flex flex-col lg:absolute lg:top-full lg:right-0 lg:bg-white lg:rounded-sm lg:shadow-md">
         <button
-          v-for="item in availableLocales" :key="item.code" class="flex items-center gap-2"
+          v-for="item in availableLocales" :key="item.code" class="flex items-center gap-2 px-4 py-2 lg:p-4"
           @click="() => {
             setLocale(item.code)
             toggleShowLanguageMenu(false)

@@ -27,7 +27,7 @@ html {
 }
 
 .container-content {
-  @apply flex flex-col gap-4 py-4;
+  @apply flex flex-col gap-4 py-4 lg:py-12;
 }
 
 .container-content h1 {
