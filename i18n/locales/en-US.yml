@@ -20,8 +20,14 @@ arts:
 pages:
   home:
     title: Home
+    school: School
+    quote: “Pain is inevitable. Suffering is optional.” — popularized by Haruki Murakami, rooted in Buddhist thought
   about:
     title: About
+    introduction: Introduction
+    souke: Souke
+    history: History
+    senseis: Senseis
   arts:
     title: Arts
   classes:

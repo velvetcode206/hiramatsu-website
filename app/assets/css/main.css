@@ -10,12 +10,32 @@ html {
   vertical-align: middle;
 }
 
-.desktop-container {
+.element-description {
+  @apply p-4 py-2 text-white text-base indent-0 bg-accent rounded-md opacity-80;
+}
+
+.page {
+  @apply flex flex-col;
+}
+
+.wrapper-desktop {
   @apply lg:w-full lg:max-w-7xl lg:mx-auto;
 }
 
-.detail-message {
-  @apply p-2 text-white bg-accent rounded-md opacity-80;
+.wrapper-content {
+  @apply flex flex-col gap-4 px-4;
+}
+
+.container-content {
+  @apply flex flex-col gap-4 py-4;
+}
+
+.container-content h1 {
+  @apply text-3xl lg:text-5xl font-bold;
+}
+
+.container-content p {
+  @apply text-xl lg:text-2xl;
 }
 
 .img-hero {

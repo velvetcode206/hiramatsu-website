@@ -20,8 +20,14 @@ arts:
 pages:
   home:
     title: Início
+    school: Escola
+    quote: “A dor é inevitável. O sofrimento é opcional.” — frase popularizada por Haruki Murakami, com raízes no pensamento budista.
   about:
     title: Sobre
+    introduction: Introdução
+    souke: Souke
+    history: História
+    senseis: Senseis
   arts:
     title: Artes
   classes:

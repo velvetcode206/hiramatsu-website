@@ -21,12 +21,12 @@ const availableLocales = computed(() => locales.value.filter(locale => locale.co
 <template>
   <div ref="target" class="relative flex flex-col gap-4 py-4">
     <button class="flex items-center gap-2 px-4" @click="toggleShowLanguageMenu()">
-      <Icon :name="`custom:flags-${localeProperties.code}`" class="text-2xl lg:text-3xl" />
+      <Icon :name="`custom:flags-${localeProperties.code}`" class="text-2xl" />
       <span class="font-semibold lg:hidden">{{ localeProperties.name }}</span>
-      <Icon name="custom:chevron-down" class="ms-auto text-3xl transition-transform" :class="{ 'rotate-180 opacity-50': showLanguageMenu }" />
+      <Icon name="custom:chevron-down" class="ms-auto text-2xl transition-transform" :class="{ 'rotate-180 opacity-50': showLanguageMenu }" />
     </button>
     <Transition name="fade-up">
-      <div v-if="showLanguageMenu" class="flex flex-col gap-4 px-4 lg:absolute lg:top-full lg:right-0 lg:py-4 lg:bg-white lg:shadow-sm lg:rounded-sm">
+      <div v-if="showLanguageMenu" class="flex flex-col gap-4 px-4 lg:absolute lg:top-full lg:right-0 lg:py-4 lg:bg-white lg:rounded-sm">
         <button
           v-for="item in availableLocales" :key="item.code" class="flex items-center gap-2"
           @click="() => {
@@ -34,8 +34,8 @@ const availableLocales = computed(() => locales.value.filter(locale => locale.co
             toggleShowLanguageMenu(false)
           }"
         >
-          <Icon :name="`custom:flags-${item.code}`" class="text-2xl lg:text-3xl" />
-          <span class="text-nowrap lg:text-lg">{{ item.name }}</span>
+          <Icon :name="`custom:flags-${item.code}`" class="text-2xl" />
+          <span class="text-nowrap">{{ item.name }}</span>
         </button>
       </div>
     </Transition>

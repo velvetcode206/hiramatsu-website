@@ -16,56 +16,78 @@ const schoolShowcase: IImageData[] = [
 </script>
 
 <template>
-  <div class="flex flex-col">
-    <div class="relative flex flex-col">
-      <p class="absolute m-2 detail-message">
-        Uma imagem cativante que demonstra a essência da escola...
-      </p>
+  <div class="page">
+    <div class="container-content">
+      <div class="wrapper-content wrapper-desktop">
+        <span class="element-description">
+          Uma imagem cativante que demonstra a essência da escola...
+        </span>
+      </div>
       <NuxtImg
         src="/home/hero.jpg"
         alt="Hero"
+        width="1920"
+        height="1080"
+        sizes="sm:100vw lg:1280px"
         preload
-        class="w-full object-cover max-h-[512px]"
+        class="w-full object-cover max-h-[600px]"
       />
     </div>
-    <div class="flex flex-col gap-4 p-4 lg:p-8 desktop-container">
-      <p class="detail-message text-base">
-        Pequena descrição sobre a escola complementando a imagem...
-      </p>
-      <p class="text-lg indent-8 lg:text-xl lg:leading-10">
-        Nulla facilisi. Nullam fringilla massa mauris, quis viverra mi pharetra vitae. Curabitur tincidunt tristique aliquet. In in aliquam nulla, non molestie ante. Vestibulum ligula nisl, ultricies vel arcu sit amet, luctus euismod sapien. Aenean quis aliquet mi. Nulla at urna velit. Donec dignissim massa sit amet lacus ornare ornare. Pellentesque et iaculis risus. Mauris ullamcorper nisl ac lorem sodales feugiat. Sed elementum ante massa, in interdum leo gravida a. Duis metus elit, ullamcorper vel metus ut, condimentum hendrerit ante. Quisque in orci nisl. Donec pharetra elit condimentum, pharetra ante vel, aliquet turpis.
-      </p>
+    <div class="container-content">
+      <div class="wrapper-content wrapper-desktop">
+        <span class="element-description">
+          Pequena descrição sobre a escola complementando a imagem...
+        </span>
+        <h1>{{ $t('pages.home.school') }}</h1>
+        <p>
+          Donec ligula lorem, fermentum et sem sed, fermentum efficitur lorem. Curabitur id lorem lorem. Sed lectus mi, vehicula vitae dolor ac, tristique feugiat quam. Etiam aliquet mi eu odio scelerisque porttitor. Sed at ipsum posuere, laoreet urna aliquam nulla.
+        </p>
+        <p>
+          Integer nunc enim, aliquet non urna eu, porttitor bibendum mauris. In tristique blandit magna ac vestibulum. Donec suscipit at ante quis mattis. Sed bibendum purus at ipsum imperdiet, et lobortis dolor viverra. Praesent finibus, quam vitae consequat velit.
+        </p>
+        <span class="element-description">
+          Uma citação histórica que serve de base para a escola, com um belo pano de fundo...
+        </span>
+      </div>
     </div>
-    <div class="z-0 relative flex flex-col shadow-inner">
-      <p class="z-10 px-6 py-12 text-2xl text-center font-syuku font-bold lg:px-12 lg:py-24 lg:text-6xl desktop-container">
-        Uma citação histórica que serve de base para a escola, com um belo pano de fundo...
-      </p>
+    <div class="container-content z-0 relative shadow-inner">
+      <span class="wrapper-desktop text-2xl z-10 px-6 py-12 text-center font-bold lg:p-24 lg:text-4xl lg:leading-tight">
+        {{ $t('pages.home.quote') }}
+      </span>
       <NuxtImg
         src="/home/painting.jpg"
         alt="Painting"
+        width="1080"
+        height="675"
+        sizes="sm:100vw lg:1280px"
         preload
-        class="absolute w-full h-full object-cover opacity-50 max-h-[512px] "
+        class="absolute top-0 w-full h-full object-cover opacity-40"
       />
     </div>
-    <div class="flex flex-col gap-4 p-4 lg:p-8 desktop-container">
-      <p class="detail-message text-base">
-        Chamada à ação, um texto para incentivar as pessoas a se inscreverem na escola...
-      </p>
-      <p class="text-lg indent-8 lg:text-xl lg:leading-10">
-        Morbi vel interdum magna. Mauris vel nibh maximus, maximus nunc a, interdum ipsum. In purus ligula, finibus non rutrum id, semper ut arcu. Sed vestibulum risus velit, vitae venenatis velit porttitor et. Donec at porttitor erat. Nullam eu rutrum eros justo.
-      </p>
-    </div>
-    <div class="relative grid grid-cols-1 lg:grid-cols-3">
-      <p class="absolute m-2 detail-message">
-        Uma ou mais imagens que mostrem os diferentes aspectos da escola...
-      </p>
-      <NuxtImg
-        v-for="item in schoolShowcase"
-        :key="item.src"
-        :src="item.src"
-        :alt="item.alt"
-        class="w-full object-cover object-top max-h-[512px]"
-      />
+    <div class="container-content">
+      <div class="wrapper-content wrapper-desktop">
+        <span class="element-description">
+          Chamada à ação, um texto para incentivar as pessoas a se inscreverem na escola...
+        </span>
+        <p>
+          Mauris sollicitudin urna mollis viverra tincidunt. Sed condimentum ullamcorper eleifend. Donec porta blandit sem suscipit imperdiet. Pellentesque et sagittis orci. Ut sapien enim, lobortis eget leo non, finibus tempus lorem. Nullam dapibus, justo id velit.
+        </p>
+        <span class="element-description">
+          Uma ou mais imagens que mostrem os diferentes aspectos da escola...
+        </span>
+      </div>
+      <div class="grid lg:grid-cols-3">
+        <NuxtImg
+          v-for="item in schoolShowcase"
+          :key="item.src"
+          :src="item.src"
+          :alt="item.alt"
+          width="512"
+          height="512"
+          sizes="sm:100vw lg:1280px"
+          class="w-full h-[512px] object-cover"
+        />
+      </div>
     </div>
   </div>
 </template>
