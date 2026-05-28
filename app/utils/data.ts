@@ -88,6 +88,7 @@ export const DOJOS_MAP: Record<
     name: 'Liberdade',
     main: true,
     address: 'R. Thomaz Gonzaga, 95 - Liberdade, São Paulo - SP, 01506-020',
+    mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.300100539985!2d-46.63805692361926!3d-23.557662978802448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59a898920739%3A0xba51baf2d6101d2!2sR.%20Thomaz%20Gonzaga%2C%2095%20-%20Liberdade%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001506-020!5e0!3m2!1sen!2sbr!4v1779945841154!5m2!1sen!2sbr',
     details: '(Prédio da Associação Iwate Kenjinkai do Brasil)',
     senseis: [
       SENSEIS_MAP[SENSEI_IDS.RUBEN_SPINOZA],
@@ -99,6 +100,7 @@ export const DOJOS_MAP: Record<
     name: 'ACAL',
     main: false,
     address: 'Av. da Liberdade, 365 - Liberdade, São Paulo - SP, 01503-000',
+    mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.3423833975185!2d-46.638596623619364!3d-23.556143678803398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59a918aba5b1%3A0x181f42651c5019c0!2sAv.%20da%20Liberdade%2C%20365%20-%20S%C3%A9%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001503-000!5e0!3m2!1sen!2sbr!4v1779952039592!5m2!1sen!2sbr',
     details: '(Prédio da Associação Cultural Assistencial Liberdade)',
     senseis: [
       SENSEIS_MAP[SENSEI_IDS.PAULO_KOMATSU],
@@ -109,6 +111,7 @@ export const DOJOS_MAP: Record<
     name: 'Vila Mariana',
     main: false,
     address: 'Av. Lins de Vasconcelos, 3382 - Vila Mariana, São Paulo - SP, 04112-002',
+    mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.430301186471!2d-46.6361202236186!3d-23.588895978780936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b1a66331b%3A0xb45b00c44dec597b!2sAv.%20Lins%20de%20Vasconcelos%2C%203382%20-%20Vila%20Mariana%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004112-002!5e0!3m2!1sen!2sbr!4v1779952086442!5m2!1sen!2sbr',
     details: '(Prédio Akita Kaikan)',
     senseis: [
       SENSEIS_MAP[SENSEI_IDS.BRUNO_CONTARDI],

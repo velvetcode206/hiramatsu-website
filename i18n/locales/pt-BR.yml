@@ -7,6 +7,12 @@ weekdays:
   thursday: Quinta-feira
   friday: Sexta-feira
   saturday: Sábado
+class-type:
+  in-person: Presencial
+  online: Online
+dojo-type:
+  main: Sede
+  branch: Filial
 arts:
   kenjutsu:
     name: Kenjutsu
@@ -32,6 +38,11 @@ pages:
     title: Artes
   classes:
     title: Turmas
+    dojo: '{type} {name}'
+    sensei: Sensei {name}
+    schedule: '{weekday} ({classType})'
+    time: 'Horário: {time}'
+    experimental: Venha fazer uma aula experimental!
   contact:
     title: Contato
 components:

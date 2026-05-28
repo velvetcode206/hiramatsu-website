@@ -7,6 +7,12 @@ weekdays:
   thursday: 木曜日
   friday: 金曜日
   saturday: 同様日
+class-type:
+  in-person: 対面
+  online: オンライン
+dojo-type:
+  main: 本部
+  branch: 支部
 arts:
   kenjutsu:
     name: 剣術
@@ -32,6 +38,11 @@ pages:
     title: 武術
   classes:
     title: 稽古
+    dojo: '{name} {type}'
+    sensei: '{name} 先生'
+    schedule: '{weekday} （{classType}）'
+    time: '時間: {time}'
+    experimental: ぜひ稽古を体験してください！
   contact:
     title: お問い合わせ
 components:
