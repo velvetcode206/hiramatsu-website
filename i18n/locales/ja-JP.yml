@@ -20,8 +20,14 @@ arts:
 pages:
   home:
     title: ホーム
+    school: 学校
+    quote: 「痛みは避けられない。苦しみは選択できる。」― 村上春樹が広めた言葉で、仏教思想に根ざしている。
   about:
     title: 協会概要
+    introduction: はじめに
+    souke: 宗家
+    history: 歴史
+    senseis: 師範紹介
   arts:
     title: 武術
   classes:

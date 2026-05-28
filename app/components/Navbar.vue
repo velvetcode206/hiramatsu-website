@@ -34,8 +34,8 @@ onClickOutside(target, () => toggleShowMobileMenu(false))
 </script>
 
 <template>
-  <div ref="target" class="top-0 sticky z-10 flex flex-col bg-white shadow-sm">
-    <div class="flex justify-between items-center gap-2 p-2 lg:justify-start lg:gap-8 lg:p-8 desktop-container">
+  <div ref="target" class="top-0 sticky z-10 flex flex-col bg-white">
+    <div class="wrapper-desktop flex justify-between items-center gap-2 p-2 lg:justify-start lg:gap-8 lg:p-8">
       <NuxtImg
         src="/logo.jpg"
         alt="Musashi"
@@ -55,7 +55,7 @@ onClickOutside(target, () => toggleShowMobileMenu(false))
         <li v-for="link in links" :key="link.to">
           <NuxtLink
             :to="$localePath(link.to)"
-            class="px-4 py-2 text-2xl transition-colors rounded-sm border-b-2 border-white hover:text-accent"
+            class="px-4 py-2 text-xl transition-colors rounded-sm border-b-2 border-white hover:text-accent"
             exact-active-class="!border-accent text-accent pointer-events-none"
           >
             {{ $t(`pages.${link.name}.title`) }}
@@ -70,7 +70,7 @@ onClickOutside(target, () => toggleShowMobileMenu(false))
         <li
           v-for="link in links"
           :key="link.to"
-          class="px-2 py-2"
+          class="flex flex-col px-2 py-2"
         >
           <NuxtLink
             :to="$localePath(link.to)"

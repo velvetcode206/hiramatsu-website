@@ -17,13 +17,18 @@ export const SENSEIS_MAP: Record<
         alt: 'Sensei Ruben Spinoza',
       },
       showcase: {
-        src: `/sensei/${SENSEI_IDS.RUBEN_SPINOZA}/showcase.png`,
+        src: `/sensei/${SENSEI_IDS.RUBEN_SPINOZA}/showcase.jpg`,
         alt: 'Sensei Ruben Spinoza',
       },
     },
     contacts: {
       phones: ['+55 (11) 99710-1979'],
       emails: ['hkenjutsu@gmail.com'],
+    },
+    introduction: {
+      [LOCALES.PT_BR]: 'Cras dolor neque, dignissim vitae urna quis, rutrum pharetra ex. Cras ac purus nec purus euismod auctor eu id lectus. Mauris vel velit facilisis, pharetra ligula ut, imperdiet risus.',
+      [LOCALES.EN_US]: 'Cras dolor neque, dignissim vitae urna quis, rutrum pharetra ex. Cras ac purus nec purus euismod auctor eu id lectus. Mauris vel velit facilisis, pharetra ligula ut, imperdiet risus.',
+      [LOCALES.JA_JP]: 'Cras dolor neque, dignissim vitae urna quis, rutrum pharetra ex. Cras ac purus nec purus euismod auctor eu id lectus. Mauris vel velit facilisis, pharetra ligula ut, imperdiet risus.',
     },
   },
   [SENSEI_IDS.PAULO_KOMATSU]: {
@@ -40,6 +45,11 @@ export const SENSEIS_MAP: Record<
       },
     },
     contacts: { phones: ['+55 (11) 97329-9660'] },
+    introduction: {
+      [LOCALES.PT_BR]: 'Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer mattis lectus quam, ac elementum odio finibus at. Suspendisse tristique diam dapibus tempor eleifend.',
+      [LOCALES.EN_US]: 'Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer mattis lectus quam, ac elementum odio finibus at. Suspendisse tristique diam dapibus tempor eleifend.',
+      [LOCALES.JA_JP]: 'Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer mattis lectus quam, ac elementum odio finibus at. Suspendisse tristique diam dapibus tempor eleifend.',
+    },
   },
   [SENSEI_IDS.BRUNO_CONTARDI]: {
     id: SENSEI_IDS.BRUNO_CONTARDI,
@@ -55,6 +65,11 @@ export const SENSEIS_MAP: Record<
       },
     },
     contacts: { phones: ['+55 (11) 93467-5745'] },
+    introduction: {
+      [LOCALES.PT_BR]: 'Fusce dignissim, tellus nec laoreet aliquam, mi quam eleifend arcu, nec lobortis nunc enim eget enim. Proin a tincidunt ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+      [LOCALES.EN_US]: 'Fusce dignissim, tellus nec laoreet aliquam, mi quam eleifend arcu, nec lobortis nunc enim eget enim. Proin a tincidunt ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+      [LOCALES.JA_JP]: 'Fusce dignissim, tellus nec laoreet aliquam, mi quam eleifend arcu, nec lobortis nunc enim eget enim. Proin a tincidunt ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+    },
   },
 }
 

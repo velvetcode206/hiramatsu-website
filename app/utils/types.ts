@@ -2,6 +2,8 @@ export type WeekDay = typeof WEEK_DAYS[keyof typeof WEEK_DAYS]
 
 export type Art = typeof ARTS[keyof typeof ARTS]
 
+export type Locales = typeof LOCALES[keyof typeof LOCALES]
+
 export interface ILink {
   to: string
   name: string
@@ -35,6 +37,7 @@ export interface ISensei {
     showcase: IImageData
   }
   contacts: IContacts
+  introduction?: Record<Locales, string>
 }
 
 export type DojoId = typeof DOJO_IDS[keyof typeof DOJO_IDS]
