@@ -47,6 +47,8 @@ export interface IDojo {
   name: string
   main: boolean
   address: string
+  mapSrc: string
+  mapSrcStreet: string
   details: string
   senseis: ISensei[]
 }
@@ -62,17 +64,15 @@ export interface IClassSchedule {
     hour: number
     minute: number
   }
-  experimental: boolean
 }
 
 export interface IClass {
-  title: string
-  address: string
-  contacts: string[]
+  dojo: IDojo
   sensei: ISensei
   art: Art
   enrollmentFee: number
   monthlyFee: number
   feeDetails?: string
   schedules: IClassSchedule[]
+  experimental: boolean
 }

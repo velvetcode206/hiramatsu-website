@@ -43,7 +43,7 @@ const senseisList: ISensei[] = [
 
 <template>
   <div class="page">
-    <div class="container-content">
+    <div class="container-content bg-white">
       <div class="wrapper-content wrapper-desktop">
         <span class="element-description">
           Uma breve introdução sobre a associação, sua origem, trajetória e situação atual. Um pouco mais detalhada do que a introdução na página inicial...
@@ -72,7 +72,7 @@ const senseisList: ISensei[] = [
         />
       </div>
     </div>
-    <div class="container-content bg-white">
+    <div class="container-content">
       <div class="wrapper-content wrapper-desktop">
         <h1>{{ $t('pages.about.souke') }}</h1>
         <span class="element-description">
@@ -105,7 +105,7 @@ const senseisList: ISensei[] = [
         />
       </div>
     </div>
-    <div class="container-content">
+    <div class="container-content bg-white">
       <div class="wrapper-content wrapper-desktop">
         <h1>{{ $t('pages.about.history') }}</h1>
         <span class="element-description">

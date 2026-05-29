@@ -11,7 +11,7 @@ html {
 }
 
 .element-description {
-  @apply p-4 py-2 text-white text-base indent-0 bg-accent rounded-md opacity-80;
+  @apply p-4 py-2 text-white text-base indent-0 bg-accent rounded-sm opacity-80;
 }
 
 .page {
@@ -27,7 +27,7 @@ html {
 }
 
 .container-content {
-  @apply flex flex-col gap-4 py-4;
+  @apply flex flex-col gap-4 py-4 lg:py-12;
 }
 
 .container-content h1 {

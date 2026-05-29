@@ -1,4 +1,4 @@
-title: Hiramatsu Association
+title: Association Hiramatsu
 weekdays:
   sunday: Sunday
   monday: Monday
@@ -7,6 +7,12 @@ weekdays:
   thursday: Thursday
   friday: Friday
   saturday: Saturday
+class-type:
+  in-person: In person
+  online: Online
+dojo-type:
+  main: Headquarters
+  branch: Branch
 arts:
   kenjutsu:
     name: Kenjutsu
@@ -32,8 +38,15 @@ pages:
     title: Arts
   classes:
     title: Classes
+    dojo: '{type} {name}'
+    sensei: Sensei {name}
+    schedule: '{weekday} ({classType})'
+    time: 'Time: {time}'
+    experimental: Come and try a class!
   contact:
     title: Contact
+    dojo: '{type} {name}'
+    sensei: Sensei {name}
 components:
   footer:
     rights: © 2008-2026 Hiramatsu Association. All rights reserved.
