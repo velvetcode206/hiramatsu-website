@@ -42,7 +42,6 @@ onClickOutside(target, () => toggleShowMobileMenu(false))
         :alt="$t('title')"
         width="256"
         height="256"
-        preload
         class="w-12 h-12 lg:w-[72px] lg:h-[72px]"
       />
       <div class="flex flex-col justify-center text-2xl leading-none lg:text-4xl lg:leading-none">

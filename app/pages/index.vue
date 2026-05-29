@@ -1,4 +1,8 @@
 <script setup lang="ts">
+const { t } = useI18n()
+
+useSeoMeta({ title: t('pages.home.title') })
+
 const schoolShowcase: IImageData[] = [
   {
     src: '/home/school/1.jpg',
@@ -29,7 +33,6 @@ const schoolShowcase: IImageData[] = [
         width="1920"
         height="1080"
         sizes="sm:100vw lg:1280px"
-        preload
         class="w-full object-cover max-h-[600px]"
       />
       <div class="wrapper-content wrapper-desktop">
@@ -58,7 +61,6 @@ const schoolShowcase: IImageData[] = [
         width="1080"
         height="675"
         sizes="sm:100vw lg:1280px"
-        preload
         class="absolute top-0 w-full h-full object-cover opacity-40"
       />
     </div>

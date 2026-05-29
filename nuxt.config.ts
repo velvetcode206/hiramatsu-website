@@ -7,6 +7,31 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   nitro: { preset: 'cloudflare-pages' },
   app: {
+    head: {
+      htmlAttrs: {
+        lang: 'pt-BR',
+        dir: 'ltr',
+      },
+      titleTemplate: '%s · Associação Hiramatsu',
+      meta: [
+        { charset: 'utf-8' },
+        {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1',
+        },
+        {
+          name: 'description',
+          content: 'Associação Hiramatsu · Escola Samurai',
+        },
+      ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/favicon.png',
+        },
+      ],
+    },
     pageTransition: {
       name: 'fade',
       mode: 'out-in',
@@ -28,6 +53,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/icon',
     '@vueuse/nuxt',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
   ],
   eslint: { config: { standalone: false } },
   image: { dir: 'assets/images', quality: 80 },
@@ -64,4 +91,10 @@ export default defineNuxtConfig({
     ],
   },
   vueuse: {},
+  site: {
+    url: 'https://hiramatsu-website.pages.dev/',
+    name: 'Associação Hiramatsu',
+    trailingSlash: true,
+  },
+  robots: { blockAiBots: true },
 })

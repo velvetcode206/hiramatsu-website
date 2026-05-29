@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { t } = useI18n()
+
+useSeoMeta({ title: t('pages.contact.title') })
+</script>
 
 <template>
   <div class="page">
@@ -73,7 +77,6 @@
           </div>
           <iframe
             :src="dojo.mapSrcStreet"
-            allowfullscreen="false"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             class="w-full h-64 lg:h-[400px] border rounded-sm shadow-sm"

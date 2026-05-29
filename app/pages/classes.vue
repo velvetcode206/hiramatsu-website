@@ -1,4 +1,8 @@
 <script setup lang="ts">
+const { t } = useI18n()
+
+useSeoMeta({ title: t('pages.classes.title') })
+
 const classes: IClass[] = [
   {
     dojo: DOJOS_MAP[DOJO_IDS.MAIN_LIBERDADE],
@@ -231,7 +235,6 @@ function getFormattedTime(schedule: IClassSchedule) {
             </div>
             <iframe
               :src="item.dojo.mapSrc"
-              allowfullscreen="false"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               class="w-full h-64 rounded-sm shadow-sm lg:h-full"

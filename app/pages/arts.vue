@@ -1,4 +1,8 @@
 <script setup lang="ts">
+const { t } = useI18n()
+
+useSeoMeta({ title: t('pages.arts.title') })
+
 const kenjutsuShowcase: IImageData[] = [
   {
     src: '/arts/kenjutsu/1.jpg',
@@ -71,6 +75,7 @@ const doryuShowcase: IImageData[] = [
           :src="kenjutsuShowcase[0]?.src"
           :alt="kenjutsuShowcase[0]?.alt"
           sizes="sm:100vw lg:1280px"
+          class="w-full object-cover rounded-sm shadow-sm"
         />
         <span class="element-description">
           Detalhes sobre a arte, como história, origens, usos físicos e espirituais, graduações, certificações, etc...
@@ -109,6 +114,7 @@ const doryuShowcase: IImageData[] = [
           :src="bojutsuShowcase[0]?.src"
           :alt="bojutsuShowcase[0]?.alt"
           sizes="sm:100vw lg:1280px"
+          class="w-full object-cover rounded-sm shadow-sm"
         />
         <span class="element-description">
           Detalhes sobre a arte, como história, origens, usos físicos e espirituais, graduações, certificações, etc...
@@ -144,6 +150,7 @@ const doryuShowcase: IImageData[] = [
           :src="doryuShowcase[0]?.src"
           :alt="doryuShowcase[0]?.alt"
           sizes="sm:100vw lg:1280px"
+          class="w-full object-cover rounded-sm shadow-sm"
         />
         <span class="element-description">
           Detalhes sobre a arte, como história, origens, usos físicos e espirituais, graduações, certificações, etc...

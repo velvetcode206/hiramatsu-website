@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { locale } = useI18n()
+const { t, locale } = useI18n()
+
+useSeoMeta({ title: t('pages.about.title') })
 
 const soukeShowcase: IImageData[] = [
   {
@@ -68,7 +70,7 @@ const senseisList: ISensei[] = [
           src="/about/hero.jpg"
           alt="hero"
           sizes="sm:100vw lg:1280px"
-          preload
+          class="w-full object-cover rounded-sm shadow-sm"
         />
       </div>
     </div>
@@ -129,8 +131,8 @@ const senseisList: ISensei[] = [
           <NuxtImg
             :src="item.src"
             :alt="item.alt"
-            class="lg:w-1/2"
             sizes="sm:100vw lg:1280px"
+            class="w-full object-cover rounded-sm shadow-sm lg:w-1/2"
           />
           <p class="lg:w-1/2">
             {{ item.text }}
@@ -163,7 +165,7 @@ const senseisList: ISensei[] = [
               :src="sensei.images.showcase.src"
               :alt="sensei.images.showcase.alt"
               sizes="sm:100vw lg:1280px"
-              class="w-full h-[300px] object-cover"
+              class="w-full h-[300px] object-cover rounded-sm shadow-sm"
             />
             <span class="font-semibold">{{ sensei.name }}</span>
             <span>
