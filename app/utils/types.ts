@@ -2,6 +2,8 @@ export type WeekDay = typeof WEEK_DAYS[keyof typeof WEEK_DAYS]
 
 export type Art = typeof ARTS[keyof typeof ARTS]
 
+export type Locales = typeof LOCALES[keyof typeof LOCALES]
+
 export interface ILink {
   to: string
   name: string
@@ -35,6 +37,7 @@ export interface ISensei {
     showcase: IImageData
   }
   contacts: IContacts
+  introduction?: Record<Locales, string>
 }
 
 export type DojoId = typeof DOJO_IDS[keyof typeof DOJO_IDS]
@@ -44,6 +47,8 @@ export interface IDojo {
   name: string
   main: boolean
   address: string
+  mapSrc: string
+  mapSrcStreet: string
   details: string
   senseis: ISensei[]
 }
@@ -59,17 +64,15 @@ export interface IClassSchedule {
     hour: number
     minute: number
   }
-  experimental: boolean
 }
 
 export interface IClass {
-  title: string
-  address: string
-  contacts: string[]
+  dojo: IDojo
   sensei: ISensei
   art: Art
   enrollmentFee: number
   monthlyFee: number
   feeDetails?: string
   schedules: IClassSchedule[]
+  experimental: boolean
 }

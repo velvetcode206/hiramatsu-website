@@ -7,6 +7,12 @@ weekdays:
   thursday: 木曜日
   friday: 金曜日
   saturday: 同様日
+class-type:
+  in-person: 対面
+  online: オンライン
+dojo-type:
+  main: 本部
+  branch: 支部
 arts:
   kenjutsu:
     name: 剣術
@@ -20,14 +26,27 @@ arts:
 pages:
   home:
     title: ホーム
+    school: 学校
+    quote: 「痛みは避けられない。苦しみは選択できる。」― 村上春樹が広めた言葉で、仏教思想に根ざしている。
   about:
     title: 協会概要
+    introduction: はじめに
+    souke: 宗家
+    history: 歴史
+    senseis: 師範紹介
   arts:
     title: 武術
   classes:
     title: 稽古
+    dojo: '{name} {type}'
+    sensei: '{name} 先生'
+    schedule: '{weekday} （{classType}）'
+    time: '時間: {time}'
+    experimental: ぜひ稽古を体験してください！
   contact:
     title: お問い合わせ
+    dojo: '{name} {type}'
+    sensei: '{name} 先生'
 components:
   footer:
     rights: © 2008-2026 平松協会. 無断転載を禁じます。

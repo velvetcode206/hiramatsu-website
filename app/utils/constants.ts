@@ -1,3 +1,9 @@
+export const LOCALES = {
+  PT_BR: 'pt-BR',
+  EN_US: 'en-US',
+  JA_JP: 'ja-JP',
+}
+
 export const WEEK_DAYS = {
   SUNDAY: 'sunday',
   MONDAY: 'monday',
