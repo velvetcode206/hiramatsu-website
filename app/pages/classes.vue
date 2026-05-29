@@ -150,87 +150,92 @@ function getFormattedTime(schedule: IClassSchedule) {
     <div v-for="item in keyedList" :key="item.key" class="container-content odd:bg-white">
       <div class="wrapper-content wrapper-desktop">
         <div class="flex flex-col gap-4 lg:grid lg:grid-cols-3 lg:gap-8">
-          <div class="flex flex-col gap-2 lg:gap-4">
-            <span class="dojo-title">
-              {{ $t(`pages.classes.dojo`, {
-                type: item.dojo.main ? $t('dojo-type.main') : $t('dojo-type.branch'),
-                name: item.dojo.name,
-              }) }}
+          <div class="flex flex-col gap-4 lg:gap-6">
+            <span class="art">
+              <span class="art-name">
+                {{ $t(`arts.${item.art}.name`) }}
+              </span>
+              {{ $t(`arts.${item.art}.description`) }}
             </span>
-            <span class="dojo-address">
-              {{ item.dojo.address }}
+            <div class="flex flex-col">
+              <span class="fee">
+                Matrícula:
+                <span class="fee-price">R${{ item.enrollmentFee }},00</span>
+              </span>
+              <span class="fee">
+                Mensalidade:
+                <span class="fee-price">R${{ item.monthlyFee }},00</span>
+              </span>
+              <span v-if="item.feeDetails" class="fee italic">
+                {{ item.feeDetails }}
+              </span>
+            </div>
+            <div class="flex flex-col gap-4 lg:gap-6">
+              <div
+                v-for="schedule in item.schedules"
+                :key="`${schedule.weekDay}-${schedule.timeStart}-${schedule.timeEnd}`" class="schedule"
+              >
+                <span>
+                  {{ $t('pages.classes.schedule', {
+                    weekday: $t(`weekdays.${schedule.weekDay}`),
+                    classType: schedule.inPerson ? $t('class-type.in-person') : $t('class-type.online'),
+
+                  }) }}
+                </span>
+                <span class="font-medium">
+                  {{ $t('pages.classes.time', {
+                    time: getFormattedTime(schedule),
+                  }) }}
+                </span>
+              </div>
+            </div>
+            <span v-if="item.experimental" class="experimental">
+              {{ $t('pages.classes.experimental') }}
             </span>
-            <iframe
-              :src="item.dojo.mapSrc"
-              allowfullscreen="false"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              class="w-full h-64 lg:h-full"
-            />
           </div>
-          <div class="col-span-2 flex flex-col gap-4 lg:grid lg:grid-cols-2 lg:gap-8">
+          <div class="flex flex-col gap-4 lg:gap-6">
+            <div class="flex flex-col gap-1 lg:gap-2">
+              <span class="sensei-name">
+                {{ $t('pages.classes.sensei', { name: item.sensei.name }) }}
+              </span>
+              <span v-for="phone in item.sensei.contacts.phones" :key="phone" class="contact">
+                {{ phone }}
+              </span>
+              <span v-for="email in item.sensei.contacts.emails" :key="email" class="contact">
+                {{ email }}
+              </span>
+            </div>
             <NuxtImg
               :src="item.sensei.images.profile.src"
               :alt="item.sensei.images.profile.alt"
               width="512"
               height="512"
               sizes="sm:100vw lg:1280px"
-              class="w-full h-full object-cover rounded-sm"
+              class="w-full h-full object-cover rounded-sm shadow-sm"
             />
-            <div class="flex flex-col gap-2 lg:gap-4">
-              <div class="flex flex-col gap-2">
-                <span class="sensei-name">
-                  {{ $t('pages.classes.sensei', { name: item.sensei.name }) }}
-                </span>
-                <span v-for="phone in item.sensei.contacts.phones" :key="phone" class="contact">
-                  {{ phone }}
-                </span>
-                <span v-for="email in item.sensei.contacts.emails" :key="email" class="contact">
-                  {{ email }}
-                </span>
-              </div>
-              <span class="art">
-                <span class="art-name">
-                  {{ $t(`arts.${item.art}.name`) }}
-                </span>
-                {{ $t(`arts.${item.art}.description`) }}
+          </div>
+          <div class="flex flex-col gap-4 lg:gap-6">
+            <div class="flex flex-col gap-1 lg:gap-2">
+              <span class="dojo-title">
+                {{ $t(`pages.classes.dojo`, {
+                  type: item.dojo.main ? $t('dojo-type.main') : $t('dojo-type.branch'),
+                  name: item.dojo.name,
+                }) }}
               </span>
-              <div class="flex flex-col gap-2">
-                <span class="fee">
-                  Matrícula:
-                  <span class="fee-price">R${{ item.enrollmentFee }},00</span>
-                </span>
-                <span class="fee">
-                  Mensalidade:
-                  <span class="fee-price">R${{ item.monthlyFee }},00</span>
-                </span>
-                <span v-if="item.feeDetails" class="fee italic">
-                  {{ item.feeDetails }}
-                </span>
-              </div>
-              <div class="flex flex-col gap-2 lg:gap-4">
-                <div
-                  v-for="schedule in item.schedules"
-                  :key="`${schedule.weekDay}-${schedule.timeStart}-${schedule.timeEnd}`" class="schedule"
-                >
-                  <span>
-                    {{ $t('pages.classes.schedule', {
-                      weekday: $t(`weekdays.${schedule.weekDay}`),
-                      classType: schedule.inPerson ? $t('class-type.in-person') : $t('class-type.online'),
-
-                    }) }}
-                  </span>
-                  <span class="font-medium">
-                    {{ $t('pages.classes.time', {
-                      time: getFormattedTime(schedule),
-                    }) }}
-                  </span>
-                </div>
-              </div>
-              <span v-if="item.experimental" class="experimental">
-                {{ $t('pages.classes.experimental') }}
+              <span class="dojo-address">
+                {{ item.dojo.address }}
+              </span>
+              <span v-if="item.dojo.details" class="dojo-details italic">
+                {{ item.dojo.details }}
               </span>
             </div>
+            <iframe
+              :src="item.dojo.mapSrc"
+              allowfullscreen="false"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="w-full h-64 rounded-sm shadow-sm lg:h-full"
+            />
           </div>
         </div>
       </div>
@@ -240,15 +245,19 @@ function getFormattedTime(schedule: IClassSchedule) {
 
 <style scoped>
 .dojo-title {
-  @apply text-2xl font-medium lg:text-4xl;
+  @apply text-xl font-medium lg:text-2xl;
 }
 
 .dojo-address {
   @apply text-lg lg:text-xl;
 }
 
+.dojo-details {
+  @apply lg:text-lg;
+}
+
 .sensei-name {
-  @apply text-2xl font-medium lg:text-4xl;
+  @apply text-xl font-medium lg:text-2xl;
 }
 
 .contact {
@@ -256,11 +265,11 @@ function getFormattedTime(schedule: IClassSchedule) {
 }
 
 .art {
-  @apply flex flex-col gap-2 text-xl lg:text-2xl;
+  @apply flex flex-col text-xl font-medium  lg:text-2xl;
 }
 
 .art-name {
-  @apply text-2xl font-medium lg:text-4xl;
+  @apply text-2xl lg:text-4xl;
 }
 
 .fee {
@@ -276,6 +285,6 @@ function getFormattedTime(schedule: IClassSchedule) {
 }
 
 .experimental {
-  @apply self-start px-4 py-2 text-lg text-accent border border-accent rounded-sm lg:text-xl;
+  @apply self-start px-4 py-2 text-lg text-accent border-l-4 border-accent rounded-sm lg:text-xl;
 }
 </style>

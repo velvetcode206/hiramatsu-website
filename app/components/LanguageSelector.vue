@@ -26,7 +26,7 @@ const availableLocales = computed(() => locales.value.filter(locale => locale.co
       <Icon name="custom:chevron-down" class="ms-auto text-2xl transition-transform" :class="{ 'rotate-180 opacity-50': showLanguageMenu }" />
     </button>
     <Transition name="fade-up">
-      <div v-if="showLanguageMenu" class="flex flex-col lg:absolute lg:top-full lg:right-0 lg:bg-white lg:rounded-sm lg:shadow-md">
+      <div v-if="showLanguageMenu" class="flex flex-col lg:absolute lg:top-full lg:right-0 lg:bg-white lg:rounded-sm lg:shadow-sm">
         <button
           v-for="item in availableLocales" :key="item.code" class="flex items-center gap-2 px-4 py-2 lg:p-4"
           @click="() => {

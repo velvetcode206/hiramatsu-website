@@ -48,6 +48,7 @@ export interface IDojo {
   main: boolean
   address: string
   mapSrc: string
+  mapSrcStreet: string
   details: string
   senseis: ISensei[]
 }

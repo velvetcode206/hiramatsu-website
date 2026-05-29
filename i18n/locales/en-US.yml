@@ -45,6 +45,8 @@ pages:
     experimental: Come and try a class!
   contact:
     title: Contact
+    dojo: '{type} {name}'
+    sensei: Sensei {name}
 components:
   footer:
     rights: © 2008-2026 Hiramatsu Association. All rights reserved.

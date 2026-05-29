@@ -45,6 +45,8 @@ pages:
     experimental: Venha fazer uma aula experimental!
   contact:
     title: Contato
+    dojo: '{type} {name}'
+    sensei: Sensei {name}
 components:
   footer:
     rights: © 2008-2026 Associação Hiramatsu. Todos os direitos reservados.
