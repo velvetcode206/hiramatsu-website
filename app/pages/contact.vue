@@ -20,7 +20,7 @@ useSeoMeta({ title: t('pages.contact.title') })
         </span>
         <div v-for="sensei in [SENSEIS_MAP[SENSEI_IDS.RUBEN_SPINOZA]]" :key="sensei.id" class="flex flex-col gap-1 lg:gap-2">
           <span class="sensei-name">
-            {{ $t('pages.contact.sensei', { name: sensei.name }) }}
+            {{ $t('general.sensei', { name: sensei.name }) }}
           </span>
           <span v-for="phone in sensei.contacts.phones" :key="phone" class="contact">
             {{ phone }}
@@ -46,7 +46,7 @@ useSeoMeta({ title: t('pages.contact.title') })
           <div class="flex flex-col gap-2 lg:gap-4">
             <div class="flex flex-col gap-1 lg:gap-2">
               <span class="dojo-title">
-                {{ $t(`pages.contact.dojo`, {
+                {{ $t(`general.dojo`, {
                   type: dojo.main ? $t('dojo-type.main') : $t('dojo-type.branch'),
                   name: dojo.name,
                 }) }}
@@ -56,7 +56,7 @@ useSeoMeta({ title: t('pages.contact.title') })
             </div>
             <div v-for="sensei in dojo.senseis" :key="sensei.id" class="flex flex-col gap-1 lg:gap-2">
               <span class="sensei-name">
-                {{ $t('pages.contact.sensei', { name: sensei.name }) }}
+                {{ $t('general.sensei', { name: sensei.name }) }}
               </span>
               <span v-for="phone in sensei.contacts.phones" :key="phone" class="contact">
                 {{ phone }}

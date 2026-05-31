@@ -1,7 +1,8 @@
 export const SENSEI_IDS = {
   RUBEN_SPINOZA: 'ruben-espinoza',
   PAULO_KOMATSU: 'paulo-komatsu',
-  BRUNO_CONTARDI: 'bruno-contardi',
+  LUCAS: 'lucas',
+  UBIRAJARA: 'ubirajara',
 } as const
 
 export const SENSEIS_MAP: Record<
@@ -12,14 +13,8 @@ export const SENSEIS_MAP: Record<
     id: SENSEI_IDS.RUBEN_SPINOZA,
     name: 'Ruben Spinoza',
     images: {
-      profile: {
-        src: `/sensei/${SENSEI_IDS.RUBEN_SPINOZA}/profile.png`,
-        alt: 'Sensei Ruben Spinoza',
-      },
-      showcase: {
-        src: `/sensei/${SENSEI_IDS.RUBEN_SPINOZA}/showcase.jpg`,
-        alt: 'Sensei Ruben Spinoza',
-      },
+      profile: `/sensei/${SENSEI_IDS.RUBEN_SPINOZA}/profile.png`,
+      showcase: `/sensei/${SENSEI_IDS.RUBEN_SPINOZA}/showcase.jpg`,
     },
     contacts: {
       phones: ['+55 (11) 99710-1979'],
@@ -35,14 +30,8 @@ export const SENSEIS_MAP: Record<
     id: SENSEI_IDS.PAULO_KOMATSU,
     name: 'Paulo Komatsu',
     images: {
-      profile: {
-        src: `/sensei/${SENSEI_IDS.PAULO_KOMATSU}/profile.png`,
-        alt: 'Sensei Paulo Komatsu',
-      },
-      showcase: {
-        src: `/sensei/${SENSEI_IDS.PAULO_KOMATSU}/showcase.png`,
-        alt: 'Sensei Paulo Komatsu',
-      },
+      profile: `/sensei/${SENSEI_IDS.PAULO_KOMATSU}/profile.png`,
+      showcase: `/sensei/${SENSEI_IDS.PAULO_KOMATSU}/showcase.png`,
     },
     contacts: { phones: ['+55 (11) 97329-9660'] },
     introduction: {
@@ -51,24 +40,32 @@ export const SENSEIS_MAP: Record<
       [LOCALES.JA_JP]: 'Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer mattis lectus quam, ac elementum odio finibus at. Suspendisse tristique diam dapibus tempor eleifend.',
     },
   },
-  [SENSEI_IDS.BRUNO_CONTARDI]: {
-    id: SENSEI_IDS.BRUNO_CONTARDI,
-    name: 'Bruno Contardi',
+  [SENSEI_IDS.LUCAS]: {
+    id: SENSEI_IDS.LUCAS,
+    name: 'Lucas',
     images: {
-      profile: {
-        src: `/sensei/${SENSEI_IDS.BRUNO_CONTARDI}/profile.png`,
-        alt: 'Sensei Bruno Contardi',
-      },
-      showcase: {
-        src: `/sensei/${SENSEI_IDS.BRUNO_CONTARDI}/showcase.png`,
-        alt: 'Sensei Bruno Contardi',
-      },
+      profile: `/sensei/${SENSEI_IDS.LUCAS}/profile.png`,
+      showcase: `/sensei/${SENSEI_IDS.LUCAS}/showcase.png`,
     },
-    contacts: { phones: ['+55 (11) 93467-5745'] },
+    contacts: { phones: ['+55 (11) 95460-4869'] },
     introduction: {
       [LOCALES.PT_BR]: 'Fusce dignissim, tellus nec laoreet aliquam, mi quam eleifend arcu, nec lobortis nunc enim eget enim. Proin a tincidunt ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
       [LOCALES.EN_US]: 'Fusce dignissim, tellus nec laoreet aliquam, mi quam eleifend arcu, nec lobortis nunc enim eget enim. Proin a tincidunt ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
       [LOCALES.JA_JP]: 'Fusce dignissim, tellus nec laoreet aliquam, mi quam eleifend arcu, nec lobortis nunc enim eget enim. Proin a tincidunt ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+    },
+  },
+  [SENSEI_IDS.UBIRAJARA]: {
+    id: SENSEI_IDS.UBIRAJARA,
+    name: 'Ubirajara',
+    images: {
+      profile: `/sensei/${SENSEI_IDS.UBIRAJARA}/profile.png`,
+      showcase: `/sensei/${SENSEI_IDS.UBIRAJARA}/showcase.png`,
+    },
+    contacts: { phones: ['+55 (91) 98561-4772'] },
+    introduction: {
+      [LOCALES.PT_BR]: 'Cras nisl est, vestibulum ut sollicitudin vel, ullamcorper in ligula. Etiam eget odio vitae turpis pellentesque tincidunt fusce. ',
+      [LOCALES.EN_US]: 'Cras nisl est, vestibulum ut sollicitudin vel, ullamcorper in ligula. Etiam eget odio vitae turpis pellentesque tincidunt fusce. ',
+      [LOCALES.JA_JP]: 'Cras nisl est, vestibulum ut sollicitudin vel, ullamcorper in ligula. Etiam eget odio vitae turpis pellentesque tincidunt fusce. ',
     },
   },
 }
@@ -76,7 +73,7 @@ export const SENSEIS_MAP: Record<
 export const DOJO_IDS = {
   MAIN_LIBERDADE: 'main-liberdade',
   BRANCH_LIBERDADE: 'branch-liberdade',
-  BRANCH_VILA_MARIANA: 'branch-vila-mariana',
+  BRANCH_BELEM: 'branch-belem',
 } as const
 
 export const DOJOS_MAP: Record<
@@ -106,18 +103,160 @@ export const DOJOS_MAP: Record<
     details: '(Prédio da Associação Cultural Assistencial Liberdade)',
     senseis: [
       SENSEIS_MAP[SENSEI_IDS.PAULO_KOMATSU],
+      SENSEIS_MAP[SENSEI_IDS.LUCAS],
+
     ],
   },
-  [DOJO_IDS.BRANCH_VILA_MARIANA]: {
-    id: DOJO_IDS.BRANCH_VILA_MARIANA,
-    name: 'Vila Mariana',
+  [DOJO_IDS.BRANCH_BELEM]: {
+    id: DOJO_IDS.BRANCH_BELEM,
+    name: 'Sede do Paysandu',
     main: false,
-    address: 'Av. Lins de Vasconcelos, 3382 - Vila Mariana, São Paulo - SP, 04112-002',
-    mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.430301186471!2d-46.6361202236186!3d-23.588895978780936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b1a66331b%3A0xb45b00c44dec597b!2sAv.%20Lins%20de%20Vasconcelos%2C%203382%20-%20Vila%20Mariana%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004112-002!5e0!3m2!1sen!2sbr!4v1779952086442!5m2!1sen!2sbr',
-    mapSrcStreet: 'https://www.google.com/maps/embed?pb=!4v1780022777589!6m8!1m7!1sWAH46OdHhajqtRTsUgDijQ!2m2!1d-23.58904878582535!2d-46.63345791685705!3f351.2725616864325!4f6.278855679881445!5f0.8538206096041024',
-    details: '(Prédio Akita Kaikan)',
+    address: 'Av. Nª Sra. de Nazaré, 404 - Nazaré, Belém - PA, 66035-115',
+    mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3258.464492779921!2d-48.48951792119059!3d-1.4532606840037046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a48e8ff707bcfd%3A0xd591e0fe10197db1!2sSede%20do%20Paysandu!5e0!3m2!1sen!2sbr!4v1780261572304!5m2!1sen!2sbr',
+    mapSrcStreet: 'https://www.google.com/maps/embed?pb=!4v1780261613989!6m8!1m7!1sManMUC24MY7rdEY9BX0Gpg!2m2!1d-1.453044140885811!2d-48.4893616092976!3f146.12447701989163!4f8.176983776954529!5f0.7820865974627469',
+    details: '(Prédio da Sede Social Paysandu)',
     senseis: [
-      SENSEIS_MAP[SENSEI_IDS.BRUNO_CONTARDI],
+      SENSEIS_MAP[SENSEI_IDS.UBIRAJARA],
+
     ],
   },
 }
+
+export const CLASSES: IClass[] = [
+  {
+    dojo: DOJOS_MAP[DOJO_IDS.MAIN_LIBERDADE],
+    sensei: SENSEIS_MAP[SENSEI_IDS.RUBEN_SPINOZA],
+    art: ARTS.KENJUTSU,
+    enrollmentFee: 200,
+    monthlyFee: 260,
+    schedules: [
+      {
+        weekDay: WEEK_DAYS.TUESDAY,
+        inPerson: true,
+        timeStart: {
+          hour: 19,
+          minute: 30,
+        },
+        timeEnd: {
+          hour: 20,
+          minute: 30,
+        },
+      },
+      {
+        weekDay: WEEK_DAYS.SATURDAY,
+        inPerson: true,
+        timeStart: {
+          hour: 14,
+          minute: 30,
+        },
+        timeEnd: {
+          hour: 16,
+          minute: 0,
+        },
+      },
+    ],
+    experimental: true,
+  },
+  {
+    dojo: DOJOS_MAP[DOJO_IDS.MAIN_LIBERDADE],
+    sensei: SENSEIS_MAP[SENSEI_IDS.PAULO_KOMATSU],
+    art: ARTS.BOJUTSU,
+    enrollmentFee: 200,
+    monthlyFee: 260,
+    feeDetails: `Mensalidade de R$62,00 se já for praticante do ${ARTS.KENJUTSU}.`,
+    schedules: [
+      {
+        weekDay: WEEK_DAYS.TUESDAY,
+        inPerson: true,
+        timeStart: {
+          hour: 20,
+          minute: 30,
+        },
+        timeEnd: {
+          hour: 21,
+          minute: 30,
+        },
+      },
+      {
+        weekDay: WEEK_DAYS.SATURDAY,
+        inPerson: true,
+        timeStart: {
+          hour: 13,
+          minute: 0,
+        },
+        timeEnd: {
+          hour: 14,
+          minute: 30,
+        },
+      },
+    ],
+    experimental: true,
+
+  },
+  {
+    dojo: DOJOS_MAP[DOJO_IDS.BRANCH_LIBERDADE],
+    sensei: SENSEIS_MAP[SENSEI_IDS.LUCAS],
+    art: ARTS.KENJUTSU,
+    enrollmentFee: 200,
+    monthlyFee: 260,
+    schedules: [
+      {
+        weekDay: WEEK_DAYS.THURSDAY,
+        inPerson: true,
+        timeStart: {
+          hour: 7,
+          minute: 0,
+        },
+        timeEnd: {
+          hour: 8,
+          minute: 30,
+        },
+      },
+    ],
+    experimental: true,
+  },
+  {
+    dojo: DOJOS_MAP[DOJO_IDS.BRANCH_LIBERDADE],
+    sensei: SENSEIS_MAP[SENSEI_IDS.PAULO_KOMATSU],
+    art: ARTS.BOJUTSU,
+    enrollmentFee: 200,
+    monthlyFee: 260,
+    schedules: [
+      {
+        weekDay: WEEK_DAYS.THURSDAY,
+        inPerson: true,
+        timeStart: {
+          hour: 7,
+          minute: 0,
+        },
+        timeEnd: {
+          hour: 8,
+          minute: 30,
+        },
+      },
+    ],
+    experimental: true,
+  },
+  {
+    dojo: DOJOS_MAP[DOJO_IDS.BRANCH_BELEM],
+    sensei: SENSEIS_MAP[SENSEI_IDS.UBIRAJARA],
+    art: ARTS.KENJUTSU,
+    enrollmentFee: 200,
+    monthlyFee: 260,
+    schedules: [
+      {
+        weekDay: WEEK_DAYS.SATURDAY,
+        inPerson: true,
+        timeStart: {
+          hour: 14,
+          minute: 0,
+        },
+        timeEnd: {
+          hour: 16,
+          minute: 0,
+        },
+      },
+    ],
+    experimental: true,
+  },
+] as const

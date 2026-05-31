@@ -3,127 +3,7 @@ const { t } = useI18n()
 
 useSeoMeta({ title: t('pages.classes.title') })
 
-const classes: IClass[] = [
-  {
-    dojo: DOJOS_MAP[DOJO_IDS.MAIN_LIBERDADE],
-    sensei: SENSEIS_MAP[SENSEI_IDS.RUBEN_SPINOZA],
-    art: ARTS.KENJUTSU,
-    enrollmentFee: 200,
-    monthlyFee: 260,
-    schedules: [
-      {
-        weekDay: WEEK_DAYS.TUESDAY,
-        inPerson: true,
-        timeStart: {
-          hour: 19,
-          minute: 30,
-        },
-        timeEnd: {
-          hour: 20,
-          minute: 30,
-        },
-      },
-      {
-        weekDay: WEEK_DAYS.SATURDAY,
-        inPerson: true,
-        timeStart: {
-          hour: 14,
-          minute: 30,
-        },
-        timeEnd: {
-          hour: 16,
-          minute: 0,
-        },
-      },
-    ],
-    experimental: true,
-  },
-  {
-    dojo: DOJOS_MAP[DOJO_IDS.MAIN_LIBERDADE],
-    sensei: SENSEIS_MAP[SENSEI_IDS.PAULO_KOMATSU],
-    art: ARTS.BOJUTSU,
-    enrollmentFee: 200,
-    monthlyFee: 260,
-    feeDetails: `Mensalidade de R$62,00 se já for praticante do ${ARTS.KENJUTSU}.`,
-    schedules: [
-      {
-        weekDay: WEEK_DAYS.TUESDAY,
-        inPerson: true,
-        timeStart: {
-          hour: 20,
-          minute: 30,
-        },
-        timeEnd: {
-          hour: 21,
-          minute: 30,
-        },
-      },
-      {
-        weekDay: WEEK_DAYS.SATURDAY,
-        inPerson: true,
-        timeStart: {
-          hour: 13,
-          minute: 0,
-        },
-        timeEnd: {
-          hour: 14,
-          minute: 30,
-        },
-      },
-    ],
-    experimental: true,
-
-  },
-  {
-    dojo: DOJOS_MAP[DOJO_IDS.BRANCH_VILA_MARIANA],
-    sensei: SENSEIS_MAP[SENSEI_IDS.BRUNO_CONTARDI],
-    art: ARTS.KENJUTSU,
-    enrollmentFee: 200,
-    monthlyFee: 260,
-    schedules: [
-      {
-        weekDay: WEEK_DAYS.MONDAY,
-        inPerson: true,
-        timeStart: {
-          hour: 7,
-          minute: 0,
-        },
-        timeEnd: {
-          hour: 8,
-          minute: 30,
-        },
-      },
-      {
-        weekDay: WEEK_DAYS.WEDNESDAY,
-        inPerson: true,
-        timeStart: {
-          hour: 7,
-          minute: 0,
-        },
-        timeEnd: {
-          hour: 8,
-          minute: 30,
-        },
-      },
-      {
-        weekDay: WEEK_DAYS.FRIDAY,
-        inPerson: true,
-        timeStart: {
-          hour: 7,
-          minute: 0,
-        },
-        timeEnd: {
-          hour: 8,
-          minute: 30,
-        },
-      },
-    ],
-    experimental: true,
-
-  },
-]
-
-const keyedList = classes.map(item => ({
+const keyedList = CLASSES.map(item => ({
   ...item,
   key: JSON.stringify(item),
 }))
@@ -200,7 +80,7 @@ function getFormattedTime(schedule: IClassSchedule) {
           <div class="flex flex-col gap-4 lg:gap-6">
             <div class="flex flex-col gap-1 lg:gap-2">
               <span class="sensei-name">
-                {{ $t('pages.classes.sensei', { name: item.sensei.name }) }}
+                {{ $t('general.sensei', { name: item.sensei.name }) }}
               </span>
               <span v-for="phone in item.sensei.contacts.phones" :key="phone" class="contact">
                 {{ phone }}
@@ -210,8 +90,8 @@ function getFormattedTime(schedule: IClassSchedule) {
               </span>
             </div>
             <NuxtImg
-              :src="item.sensei.images.profile.src"
-              :alt="item.sensei.images.profile.alt"
+              :src="item.sensei.images.profile"
+              :alt="$t('general.sensei', { name: item.sensei.name })"
               width="512"
               height="512"
               sizes="sm:100vw lg:1280px"
@@ -221,7 +101,7 @@ function getFormattedTime(schedule: IClassSchedule) {
           <div class="flex flex-col gap-4 lg:gap-6">
             <div class="flex flex-col gap-1 lg:gap-2">
               <span class="dojo-title">
-                {{ $t(`pages.classes.dojo`, {
+                {{ $t(`general.dojo`, {
                   type: item.dojo.main ? $t('dojo-type.main') : $t('dojo-type.branch'),
                   name: item.dojo.name,
                 }) }}

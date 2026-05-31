@@ -28,7 +28,7 @@ const schoolShowcase: IImageData[] = [
         </span>
       </div>
       <NuxtImg
-        src="/home/hero.jpg"
+        src="/home/hero.png"
         alt="Hero"
         width="1920"
         height="1080"

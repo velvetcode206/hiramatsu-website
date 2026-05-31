@@ -23,6 +23,9 @@ arts:
   doryu:
     name: 動流
     description: 動きの中で行う瞑想の術。
+general:
+  sensei: '{name} 先生'
+  dojo: '{name} {type}'
 pages:
   home:
     title: ホーム
@@ -38,15 +41,11 @@ pages:
     title: 武術
   classes:
     title: 稽古
-    dojo: '{name} {type}'
-    sensei: '{name} 先生'
     schedule: '{weekday} （{classType}）'
     time: '時間: {time}'
     experimental: ぜひ稽古を体験してください！
   contact:
     title: お問い合わせ
-    dojo: '{name} {type}'
-    sensei: '{name} 先生'
 components:
   footer:
     rights: © 2008-2026 平松協会. 無断転載を禁じます。

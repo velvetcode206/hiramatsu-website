@@ -33,8 +33,8 @@ export interface ISensei {
   id: SenseiId
   name: string
   images: {
-    profile: IImageData
-    showcase: IImageData
+    profile: string
+    showcase: string
   }
   contacts: IContacts
   introduction?: Record<Locales, string>

@@ -39,7 +39,8 @@ const historyShowcase: IImageData[] = [
 const senseisList: ISensei[] = [
   SENSEIS_MAP[SENSEI_IDS.RUBEN_SPINOZA],
   SENSEIS_MAP[SENSEI_IDS.PAULO_KOMATSU],
-  SENSEIS_MAP[SENSEI_IDS.BRUNO_CONTARDI],
+  SENSEIS_MAP[SENSEI_IDS.LUCAS],
+  SENSEIS_MAP[SENSEI_IDS.UBIRAJARA],
 ]
 </script>
 
@@ -162,8 +163,8 @@ const senseisList: ISensei[] = [
             class="flex flex-col gap-2 text-lg lg:text-xl"
           >
             <NuxtImg
-              :src="sensei.images.showcase.src"
-              :alt="sensei.images.showcase.alt"
+              :src="sensei.images.showcase"
+              :alt="$t('general.sensei', { name: sensei.name })"
               sizes="sm:100vw lg:1280px"
               class="w-full h-[300px] object-cover rounded-sm shadow-sm"
             />
