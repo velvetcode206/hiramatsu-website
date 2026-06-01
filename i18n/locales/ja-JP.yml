@@ -41,6 +41,8 @@ pages:
     title: 武術
   classes:
     title: 稽古
+    enrollment: '入会金:'
+    monthly: '月会費:'
     schedule: '{weekday} （{classType}）'
     time: '時間: {time}'
     experimental: ぜひ稽古を体験してください！

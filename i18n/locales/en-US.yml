@@ -40,6 +40,8 @@ pages:
   arts:
     title: Arts
   classes:
+    enrollment: 'Enrollment fee:'
+    monthly: 'Monthly fee:'
     title: Classes
     schedule: '{weekday} ({classType})'
     time: 'Time: {time}'

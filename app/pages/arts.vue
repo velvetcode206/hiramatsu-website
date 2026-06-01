@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const dataStore = useDataStore()
+const { showTips } = storeToRefs(dataStore)
 
 useSeoMeta({ title: t('pages.arts.title') })
 
@@ -54,7 +56,7 @@ const doryuShowcase: IImageData[] = [
     <div class="container-content bg-white">
       <div class="wrapper-content wrapper-desktop">
         <h1>{{ $t('pages.arts.title') }}</h1>
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Uma breve descrição de como a escola possui diferentes estilos para atender a diferentes necessidades e como esses estilos interagem entre si...
         </span>
         <p>
@@ -68,7 +70,7 @@ const doryuShowcase: IImageData[] = [
     <div class="container-content">
       <div class="wrapper-content wrapper-desktop">
         <h1>{{ $t('arts.kenjutsu.name') }}</h1>
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Uma imagem chamativa mostrando o estilo...
         </span>
         <NuxtImg
@@ -77,7 +79,7 @@ const doryuShowcase: IImageData[] = [
           sizes="sm:100vw lg:1280px"
           class="w-full object-cover rounded-sm shadow-sm"
         />
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Detalhes sobre a arte, como história, origens, usos físicos e espirituais, graduações, certificações, etc...
         </span>
         <p>
@@ -89,7 +91,7 @@ const doryuShowcase: IImageData[] = [
         <p>
           Etiam vel dignissim odio, in ullamcorper turpis. Donec vehicula dolor a ipsum scelerisque sodales. Praesent maximus eget sapien dui.
         </p>
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Uma ou mais fotos do estilo, mostrando-o suas diferentes aplicações...
         </span>
       </div>
@@ -107,7 +109,7 @@ const doryuShowcase: IImageData[] = [
     <div class="container-content bg-white">
       <div class="wrapper-content wrapper-desktop">
         <h1>{{ $t('arts.bojutsu.name') }}</h1>
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Uma imagem chamativa mostrando o estilo...
         </span>
         <NuxtImg
@@ -116,7 +118,7 @@ const doryuShowcase: IImageData[] = [
           sizes="sm:100vw lg:1280px"
           class="w-full object-cover rounded-sm shadow-sm"
         />
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Detalhes sobre a arte, como história, origens, usos físicos e espirituais, graduações, certificações, etc...
         </span>
         <p>
@@ -143,7 +145,7 @@ const doryuShowcase: IImageData[] = [
     <div class="container-content">
       <div class="wrapper-content wrapper-desktop">
         <h1>{{ $t('arts.doryu.name') }}</h1>
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Uma imagem chamativa mostrando o estilo...
         </span>
         <NuxtImg
@@ -152,7 +154,7 @@ const doryuShowcase: IImageData[] = [
           sizes="sm:100vw lg:1280px"
           class="w-full object-cover rounded-sm shadow-sm"
         />
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Detalhes sobre a arte, como história, origens, usos físicos e espirituais, graduações, certificações, etc...
         </span>
         <p>

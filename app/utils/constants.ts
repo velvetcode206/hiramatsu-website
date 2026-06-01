@@ -19,3 +19,5 @@ export const ARTS = {
   BOJUTSU: 'bojutsu',
   DORYU: 'doryu',
 } as const
+
+export const STORES = { DATA: 'data' } as const

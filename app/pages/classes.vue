@@ -1,12 +1,9 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { t, locale } = useI18n()
+const dataStore = useDataStore()
+const { showTips, CLASSES } = storeToRefs(dataStore)
 
 useSeoMeta({ title: t('pages.classes.title') })
-
-const keyedList = CLASSES.map(item => ({
-  ...item,
-  key: JSON.stringify(item),
-}))
 
 function getFormattedTime(schedule: IClassSchedule) {
   function leadingZero(time: number) {
@@ -21,17 +18,17 @@ function getFormattedTime(schedule: IClassSchedule) {
     <div class="container-content bg-white">
       <div class="wrapper-content wrapper-desktop">
         <h1>{{ $t('pages.classes.title') }}</h1>
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Um aviso sobre a escola ter diferentes filiais, cada uma com seus próprios senseis...
         </span>
         <p>Nam suscipit eu elit nec tempus. Suspendisse suscipit a elit at consequat. Integer purus metus, finibus ac enim et, dignissim cursus arcu.</p>
         <p>Donec cursus consequat nibh, sed aliquam massa rutrum sed. Vivamus posuere ut tellus eu tincidunt. In ultricies orci.</p>
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Lista todos os dojos e os detalhes das aulas...
         </span>
       </div>
     </div>
-    <div v-for="item in keyedList" :key="item.key" class="container-content odd:bg-white">
+    <div v-for="item in CLASSES" :key="item.id" class="container-content odd:bg-white">
       <div class="wrapper-content wrapper-desktop">
         <div class="flex flex-col gap-4 lg:grid lg:grid-cols-3 lg:gap-8">
           <div class="flex flex-col gap-4 lg:gap-6">
@@ -43,15 +40,15 @@ function getFormattedTime(schedule: IClassSchedule) {
             </span>
             <div class="flex flex-col">
               <span class="fee">
-                Matrícula:
+                {{ $t('pages.classes.enrollment') }}
                 <span class="fee-price">R${{ item.enrollmentFee }},00</span>
               </span>
               <span class="fee">
-                Mensalidade:
+                {{ $t('pages.classes.monthly') }}
                 <span class="fee-price">R${{ item.monthlyFee }},00</span>
               </span>
-              <span v-if="item.feeDetails" class="fee italic">
-                {{ item.feeDetails }}
+              <span v-if="item.details" class="fee italic">
+                {{ item.details?.[locale] }}
               </span>
             </div>
             <div class="flex flex-col gap-4 lg:gap-6">
@@ -90,7 +87,7 @@ function getFormattedTime(schedule: IClassSchedule) {
               </span>
             </div>
             <NuxtImg
-              :src="item.sensei.images.profile"
+              :src="`/sensei/${item.sensei.id}/profile.jpg`"
               :alt="$t('general.sensei', { name: item.sensei.name })"
               width="512"
               height="512"
@@ -110,7 +107,7 @@ function getFormattedTime(schedule: IClassSchedule) {
                 {{ item.dojo.address }}
               </span>
               <span v-if="item.dojo.details" class="dojo-details italic">
-                {{ item.dojo.details }}
+                {{ item.dojo.details?.[locale] }}
               </span>
             </div>
             <iframe

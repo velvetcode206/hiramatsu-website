@@ -41,6 +41,8 @@ pages:
     title: Artes
   classes:
     title: Turmas
+    enrollment: 'Matrícula:'
+    monthly: 'Mensalidade:'
     schedule: '{weekday} ({classType})'
     time: 'Horário: {time}'
     experimental: Venha fazer uma aula experimental!

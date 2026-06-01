@@ -55,6 +55,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
+    '@pinia/nuxt',
   ],
   eslint: { config: { standalone: false } },
   image: { dir: 'assets/images', quality: 80 },
@@ -97,4 +98,5 @@ export default defineNuxtConfig({
     trailingSlash: true,
   },
   robots: { blockAiBots: true },
+  pinia: {},
 })
