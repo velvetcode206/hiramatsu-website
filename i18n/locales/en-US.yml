@@ -23,6 +23,9 @@ arts:
   doryu:
     name: Doryu
     description: The art of meditation in motion.
+general:
+  sensei: Sensei {name}
+  dojo: '{type} {name}'
 pages:
   home:
     title: Home
@@ -37,16 +40,16 @@ pages:
   arts:
     title: Arts
   classes:
+    enrollment: 'Enrollment fee:'
+    monthly: 'Monthly fee:'
     title: Classes
-    dojo: '{type} {name}'
-    sensei: Sensei {name}
     schedule: '{weekday} ({classType})'
     time: 'Time: {time}'
     experimental: Come and try a class!
   contact:
     title: Contact
-    dojo: '{type} {name}'
-    sensei: Sensei {name}
+  gallery:
+    title: Gallery
 components:
   footer:
     rights: © 2008-2026 Hiramatsu Association. All rights reserved.

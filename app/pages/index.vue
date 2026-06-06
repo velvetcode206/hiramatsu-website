@@ -1,4 +1,10 @@
 <script setup lang="ts">
+const { t } = useI18n()
+const dataStore = useDataStore()
+const { showTips } = storeToRefs(dataStore)
+
+useSeoMeta({ title: t('pages.home.title') })
+
 const schoolShowcase: IImageData[] = [
   {
     src: '/home/school/1.jpg',
@@ -18,7 +24,7 @@ const schoolShowcase: IImageData[] = [
 <template>
   <div class="page">
     <div class="container-content bg-white">
-      <div class="wrapper-content wrapper-desktop">
+      <div v-if="showTips" class="wrapper-content wrapper-desktop">
         <span class="element-description">
           Uma imagem cativante que demonstra a essência da escola...
         </span>
@@ -29,11 +35,11 @@ const schoolShowcase: IImageData[] = [
         width="1920"
         height="1080"
         sizes="sm:100vw lg:1280px"
-        preload
         class="w-full object-cover max-h-[600px]"
+        preload
       />
       <div class="wrapper-content wrapper-desktop">
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Pequena descrição sobre a escola complementando a imagem...
         </span>
         <h1>{{ $t('pages.home.school') }}</h1>
@@ -43,7 +49,7 @@ const schoolShowcase: IImageData[] = [
         <p>
           Integer nunc enim, aliquet non urna eu, porttitor bibendum mauris. In tristique blandit magna ac vestibulum. Donec suscipit at ante quis mattis. Sed bibendum purus at ipsum imperdiet, et lobortis dolor viverra. Praesent finibus, quam vitae consequat velit.
         </p>
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Uma citação histórica que serve de base para a escola, com um belo pano de fundo...
         </span>
       </div>
@@ -58,19 +64,18 @@ const schoolShowcase: IImageData[] = [
         width="1080"
         height="675"
         sizes="sm:100vw lg:1280px"
-        preload
         class="absolute top-0 w-full h-full object-cover opacity-40"
       />
     </div>
     <div class="container-content">
       <div class="wrapper-content wrapper-desktop">
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Chamada à ação, um texto para incentivar as pessoas a se inscreverem na escola...
         </span>
         <p>
           Mauris sollicitudin urna mollis viverra tincidunt. Sed condimentum ullamcorper eleifend. Donec porta blandit sem suscipit imperdiet. Pellentesque et sagittis orci. Ut sapien enim, lobortis eget leo non, finibus tempus lorem. Nullam dapibus, justo id velit.
         </p>
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Uma ou mais imagens que mostrem os diferentes aspectos da escola...
         </span>
       </div>

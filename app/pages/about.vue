@@ -1,5 +1,9 @@
 <script setup lang="ts">
-const { locale } = useI18n()
+const { t, locale } = useI18n()
+const dataStore = useDataStore()
+const { showTips, SENSEIS } = storeToRefs(dataStore)
+
+useSeoMeta({ title: t('pages.about.title') })
 
 const soukeShowcase: IImageData[] = [
   {
@@ -33,19 +37,13 @@ const historyShowcase: IImageData[] = [
     text: 'Ut condimentum volutpat porta. Ut tempus at ex vel fringilla. Vestibulum ullamcorper lorem vel elit auctor ultrices. Vivamus aliquam urna quam, nec sodales ipsum mollis efficitur.',
   },
 ]
-
-const senseisList: ISensei[] = [
-  SENSEIS_MAP[SENSEI_IDS.RUBEN_SPINOZA],
-  SENSEIS_MAP[SENSEI_IDS.PAULO_KOMATSU],
-  SENSEIS_MAP[SENSEI_IDS.BRUNO_CONTARDI],
-]
 </script>
 
 <template>
   <div class="page">
     <div class="container-content bg-white">
       <div class="wrapper-content wrapper-desktop">
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Uma breve introdução sobre a associação, sua origem, trajetória e situação atual. Um pouco mais detalhada do que a introdução na página inicial...
         </span>
         <h1>{{ $t('pages.about.introduction') }}</h1>
@@ -61,21 +59,21 @@ const senseisList: ISensei[] = [
         <p>
           Praesent eu gravida diam. Fusce at nibh risus. Proin fermentum iaculis enim, eget interdum est scelerisque id.
         </p>
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Uma foto escolar lisonjeira, de preferência com muitos alunos...
         </span>
         <NuxtImg
           src="/about/hero.jpg"
           alt="hero"
           sizes="sm:100vw lg:1280px"
-          preload
+          class="w-full object-cover rounded-sm shadow-sm"
         />
       </div>
     </div>
     <div class="container-content">
       <div class="wrapper-content wrapper-desktop">
         <h1>{{ $t('pages.about.souke') }}</h1>
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Detalhes sobre o atual Souke (宗家), o chefe da associação. Onde estudou artes, com quem e como chegou à chefia. Também outras realizações pessoais...
         </span>
         <p>
@@ -90,7 +88,7 @@ const senseisList: ISensei[] = [
         <p>
           Aenean viverra sapien consectetur nibh consequat vehicula. Sed faucibus interdum aliquam. Duis eu porta sapien.
         </p>
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Uma ou mais fotos do Souke, mostrando-o dentro e fora de seu dougi e suas certificações...
         </span>
       </div>
@@ -108,7 +106,7 @@ const senseisList: ISensei[] = [
     <div class="container-content bg-white">
       <div class="wrapper-content wrapper-desktop">
         <h1>{{ $t('pages.about.history') }}</h1>
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Uma breve descrição e cronologia e histórica de todas as outras escolas e figuras importantes que contribuíram para a formação da escola Hiramatsu...
         </span>
         <p>
@@ -129,8 +127,8 @@ const senseisList: ISensei[] = [
           <NuxtImg
             :src="item.src"
             :alt="item.alt"
-            class="lg:w-1/2"
             sizes="sm:100vw lg:1280px"
+            class="w-full object-cover rounded-sm shadow-sm lg:w-1/2"
           />
           <p class="lg:w-1/2">
             {{ item.text }}
@@ -141,7 +139,7 @@ const senseisList: ISensei[] = [
     <div class="container-content">
       <div class="wrapper-content wrapper-desktop">
         <h1>{{ $t('pages.about.senseis') }}</h1>
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Uma breve nota sobre a importância de ser um sensei e suas responsabilidades...
         </span>
         <p>
@@ -150,20 +148,20 @@ const senseisList: ISensei[] = [
         <p>
           Integer rutrum hendrerit risus, nec faucibus enim elementum at. Nulla maximus consectetur nibh, condimentum varius nulla. Proin lacinia odio sit amet ipsum posuere dapibus.
         </p>
-        <span class="element-description">
+        <span v-if="showTips" class="element-description">
           Uma lista dos senseis atuais...
         </span>
         <div class="grid gap-4 lg:grid-cols-3">
           <div
-            v-for="sensei in senseisList"
+            v-for="sensei in SENSEIS"
             :key="sensei.id"
             class="flex flex-col gap-2 text-lg lg:text-xl"
           >
             <NuxtImg
-              :src="sensei.images.showcase.src"
-              :alt="sensei.images.showcase.alt"
+              :src="`/sensei/${sensei.id}/showcase.jpg`"
+              :alt="$t('general.sensei', { name: sensei.name })"
               sizes="sm:100vw lg:1280px"
-              class="w-full h-[300px] object-cover"
+              class="w-full h-[300px] object-cover rounded-sm shadow-sm"
             />
             <span class="font-semibold">{{ sensei.name }}</span>
             <span>
