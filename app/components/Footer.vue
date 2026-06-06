@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { useDataStore } from '~/stores/dataStore'
+
+const dataStore = useDataStore()
+const { showTips } = storeToRefs(dataStore)
+
 const links: ILink[] = [
   {
     to: 'https://web.facebook.com/associacaohiramatsu',
@@ -31,6 +36,13 @@ const links: ILink[] = [
       <p class="lg:text-lg">
         {{ $t('components.footer.rights') }}
       </p>
+      <button
+        class="px-4 py-2 ms-auto border border-accent rounded-sm"
+        :class="{ 'bg-accent text-white': showTips }"
+        @click="dataStore.toggleShowTips()"
+      >
+        {{ showTips ? 'Esconder dicas' : 'Mostrar dicas' }}
+      </button>
     </div>
   </div>
 </template>

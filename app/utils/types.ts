@@ -9,13 +9,19 @@ export interface ILink {
   name: string
 }
 
+export interface IMedia {
+  type: 'image' | 'video' | 'youtube'
+  src: string
+  span?: 'lg:col-span-2' | 'lg:row-span-2' | 'lg:col-span-2 lg:row-span-2'
+  alt?: string
+  muted?: boolean
+}
+
 export interface IImageData {
   src: string
   alt: string
   text?: string
 }
-
-export type SenseiId = typeof SENSEI_IDS[keyof typeof SENSEI_IDS]
 
 export interface ISocials {
   facebook?: string
@@ -30,27 +36,24 @@ export interface IContacts {
 }
 
 export interface ISensei {
-  id: SenseiId
+  id: string
   name: string
-  images: {
-    profile: IImageData
-    showcase: IImageData
-  }
   contacts: IContacts
+  isSouke?: boolean
+  isShihan?: boolean
   introduction?: Record<Locales, string>
 }
 
-export type DojoId = typeof DOJO_IDS[keyof typeof DOJO_IDS]
-
 export interface IDojo {
-  id: DojoId
+  id: string
   name: string
   main: boolean
   address: string
   mapSrc: string
   mapSrcStreet: string
-  details: string
-  senseis: ISensei[]
+  details: Record<Locales, string>
+  senseiIds: string[]
+  _senseis: ISensei[]
 }
 
 export interface IClassSchedule {
@@ -67,12 +70,13 @@ export interface IClassSchedule {
 }
 
 export interface IClass {
+  id: string
   dojo: IDojo
   sensei: ISensei
   art: Art
   enrollmentFee: number
   monthlyFee: number
-  feeDetails?: string
   schedules: IClassSchedule[]
   experimental: boolean
+  details?: Record<Locales, string>
 }
