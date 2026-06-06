@@ -46,6 +46,8 @@ pages:
     schedule: '{weekday} （{classType}）'
     time: '時間: {time}'
     experimental: ぜひ稽古を体験してください！
+  gallery:
+    title: ギャラリー
   contact:
     title: お問い合わせ
 components:

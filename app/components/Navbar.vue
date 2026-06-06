@@ -17,6 +17,10 @@ const links: ILink[] = [
     name: 'classes',
   },
   {
+    to: 'gallery',
+    name: 'gallery',
+  },
+  {
     to: 'contact',
     name: 'contact',
   },

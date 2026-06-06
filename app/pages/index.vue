@@ -24,8 +24,8 @@ const schoolShowcase: IImageData[] = [
 <template>
   <div class="page">
     <div class="container-content bg-white">
-      <div class="wrapper-content wrapper-desktop">
-        <span v-if="showTips" class="element-description">
+      <div v-if="showTips" class="wrapper-content wrapper-desktop">
+        <span class="element-description">
           Uma imagem cativante que demonstra a essência da escola...
         </span>
       </div>

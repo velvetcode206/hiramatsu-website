@@ -9,6 +9,14 @@ export interface ILink {
   name: string
 }
 
+export interface IMedia {
+  type: 'image' | 'video' | 'youtube'
+  src: string
+  span?: 'lg:col-span-2' | 'lg:row-span-2' | 'lg:col-span-2 lg:row-span-2'
+  alt?: string
+  muted?: boolean
+}
+
 export interface IImageData {
   src: string
   alt: string

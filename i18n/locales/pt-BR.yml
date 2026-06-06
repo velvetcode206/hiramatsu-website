@@ -46,6 +46,8 @@ pages:
     schedule: '{weekday} ({classType})'
     time: 'Horário: {time}'
     experimental: Venha fazer uma aula experimental!
+  gallery:
+    title: Galeria
   contact:
     title: Contato
 components:
