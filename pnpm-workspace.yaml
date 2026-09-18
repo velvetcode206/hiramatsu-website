@@ -17,3 +17,4 @@ trustPolicy: no-downgrade
 trustPolicyExclude:
   - semver
   - chokidar
+  - undici
