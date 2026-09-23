@@ -23,7 +23,7 @@ html {
 }
 
 .content-body {
-  @apply text-xl lg:text-2xl;
+  @apply text-xl lg:text-2xl whitespace-pre-line;
 }
 
 .content-description {
