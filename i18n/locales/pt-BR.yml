@@ -29,8 +29,41 @@ general:
 pages:
   home:
     title: Início
-    school: Escola
-    quote: “A dor é inevitável. O sofrimento é opcional.” — frase popularizada por Haruki Murakami, com raízes no pensamento budista.
+    hero-title: Tradição, disciplina e prática.
+    hero-body: Um espaço dedicado ao estudo e à prática das artes marciais japonesas, onde tradição, técnica e desenvolvimento pessoal se encontram.
+    school-title: Escola
+    school-body: |-
+      A Associação Hiramatsu é um espaço dedicado ao estudo, à prática e à preservação de tradições marciais japonesas.
+
+      Mais do que o aprendizado de técnicas, a prática envolve atenção, disciplina, respeito e constância.
+
+      Cada treino é uma oportunidade de aperfeiçoar movimentos, compreender princípios e desenvolver uma relação mais consciente com o próprio corpo e com aqueles que compartilham a prática.
+
+      Em um ambiente de aprendizado contínuo, tradição e prática se encontram para formar uma experiência que vai além do momento do treino.
+    quote: “A dor é inevitável. O sofrimento é opcional.” — Frase popularizada por Haruki Murakami
+    principles-title: Prática que vai além da técnica
+    principles-body: |-
+      Disciplina
+      A evolução nasce da regularidade, da atenção e da dedicação ao treino.
+
+      Respeito
+      O aprendizado acontece em conjunto, com respeito à tradição, aos instrutores e aos companheiros de prática.
+
+      Precisão
+      A atenção aos detalhes é essencial para compreender e aperfeiçoar cada movimento.
+
+      Continuidade
+      Cada treino acrescenta uma nova experiência. O aprendizado se constrói ao longo do tempo, sem um ponto final.
+    emotional-title: A prática transforma
+    emotional-body: |-
+      O aprendizado acontece no encontro entre intenção e prática.
+
+      Cada movimento exige presença. Cada repetição revela um novo detalhe. Com o tempo, aquilo que parecia apenas técnica passa a fazer parte de uma compreensão mais profunda da prática.
+
+      É nesse processo, construído treino após treino, que a experiência ganha significado.
+    cta-title: Venha conhecer a Hiramatsu
+    cta-body: Saiba mais sobre nossa escola, nossa prática e como entrar em contato conosco.
+    cta-button: Entre em contato
   about:
     title: Sobre
     introduction: Introdução
@@ -53,3 +86,16 @@ pages:
 components:
   footer:
     rights: © 2008-2026 Associação Hiramatsu. Todos os direitos reservados.
+images:
+  home:
+    hero:
+      alt: Estudante treinando ao nascer do sol. Foto original do Gasshuku 2025. Editada com IA.
+    quote:
+      alt: Pintura floral com uma frase filosófica.
+    school:
+      paulo-sensei:
+        alt: Demonstração de Tameshigiri. Foto original do evento Mostra Japão 2026.
+      douglas-and-joao:
+        alt: Pratica de Bojutsu. Foto original do Gasshuku 2024. Editada com IA.
+      ruben-sensei:
+        alt: Treinamento meditativo. Foto original.

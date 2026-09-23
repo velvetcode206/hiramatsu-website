@@ -47,9 +47,11 @@
     "postcss"
   ],
   "i18n-ally.localesPaths": [
-    "i18n",
     "i18n/locales"
   ],
+  "i18n-ally.displayLanguage": "pt-BR",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sourceLanguage": "pt-BR",
   "files.associations": {
     "*.css": "tailwindcss"
   },

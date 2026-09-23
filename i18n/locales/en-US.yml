@@ -29,8 +29,41 @@ general:
 pages:
   home:
     title: Home
-    school: School
-    quote: “Pain is inevitable. Suffering is optional.” — popularized by Haruki Murakami, rooted in Buddhist thought
+    hero-title: Tradition, discipline and practice.
+    hero-body: A space dedicated to the study and practice of Japanese martial arts, where tradition, technique and personal development meet.
+    school-title: School
+    school-body: |-
+      The Hiramatsu Association is a space dedicated to the study, practice and preservation of Japanese martial traditions.
+
+      More than learning techniques, practice involves attention, discipline, respect and constancy.
+
+      Each training session is an opportunity to perfect movements, understand principles and develop a more conscious relationship with your own body and with those who share the practice.
+
+      In a continuous learning environment, tradition and practice come together to form an experience that goes beyond the moment of training.
+    quote: “Pain is inevitable. Suffering is optional.” — Phrase popularized by Haruki Murakami
+    principles-title: Practice that goes beyond technique
+    principles-body: |-
+      Discipline
+      Evolution comes from regularity, attention and dedication to training.
+
+      Respect
+      Learning happens together, with respect for tradition, instructors and fellow practitioners.
+
+      Accuracy
+      Attention to detail is essential to understand and perfect each movement.
+
+      Continuity
+      Each workout adds a new experience. Learning is built over time, without an end point.
+    emotional-title: Practice transforms
+    emotional-body: |-
+      Learning happens at the meeting between intention and practice.
+
+      Every movement requires presence. Each repetition reveals a new detail. Over time, what seemed like just technique becomes part of a deeper understanding of the practice.
+
+      It is in this process, built training after training, that the experience gains meaning.
+    cta-title: Come and discover Hiramatsu
+    cta-body: Learn more about our school, our practice and how to contact us.
+    cta-button: Get in touch
   about:
     title: About
     introduction: Introduction
@@ -53,3 +86,16 @@ pages:
 components:
   footer:
     rights: © 2008-2026 Hiramatsu Association. All rights reserved.
+images:
+  home:
+    hero:
+      alt: Samurai training at sunrise. Original photo from Gasshuku 2025. Edited with AI.
+    quote:
+      alt: Floral painting with a philosophical phrase.
+    school:
+      paulo-sensei:
+        alt: Tameshigiri demonstration. Original photo from the Mostra Japão 2026 event.
+      douglas-and-joao:
+        alt: Bōjutsu practice. Original photo from Gasshuku 2024. Edited with AI.
+      ruben-sensei:
+        alt: Meditative training. Original photo.',
