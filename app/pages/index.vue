@@ -92,7 +92,7 @@ const quoteImageData = computed<IImageData>(() => ({
           width="512"
           height="512"
           sizes="sm:100vw lg:1280px"
-          class="w-full min-h-[512px] object-cover"
+          class="w-full h-[512px] object-cover"
         />
       </div>
       <ContentWrapper :desktop-wrapper="true">
