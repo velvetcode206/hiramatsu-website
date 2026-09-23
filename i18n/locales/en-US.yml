@@ -29,6 +29,9 @@ general:
 pages:
   home:
     title: Home
+    hero-title: Tradition, discipline, and practice.
+    hero-body: A space dedicated to the study and practice of Japanese martial arts, where technique, discipline, and personal development go hand in hand.
+    hero-alt: Samurai training at sunrise. Original photo from Gasshuku 2025. Edited with AI.
     school: School
     quote: “Pain is inevitable. Suffering is optional.” — popularized by Haruki Murakami, rooted in Buddhist thought
   about:

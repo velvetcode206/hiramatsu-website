@@ -18,6 +18,19 @@ html {
   @apply flex flex-col;
 }
 
+.content-title {
+  @apply text-3xl lg:text-5xl font-bold;
+}
+
+.content-body {
+  @apply text-xl lg:text-2xl;
+}
+
+.content-description {
+  @apply text-base lg:text-lg;
+}
+
+
 .wrapper-desktop {
   @apply lg:w-full lg:max-w-7xl lg:mx-auto;
 }
@@ -36,12 +49,4 @@ html {
 
 .container-content p {
   @apply text-xl lg:text-2xl;
-}
-
-.img-hero {
-  width: 100%;
-}
-
-.img-profile {
-  width: 100%;
 }

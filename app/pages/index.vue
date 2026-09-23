@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ContentContainer from '~/components/Content/ContentContainer.vue'
+
 const { t } = useI18n()
 const dataStore = useDataStore()
 const { showTips } = storeToRefs(dataStore)
@@ -19,26 +21,32 @@ const schoolShowcase: IImageData[] = [
     alt: 'school-3',
   },
 ]
+
+const heroAlt = computed(() => t('pages.home.hero-alt'))
 </script>
 
 <template>
   <div class="page">
-    <div class="container-content bg-white">
-      <div v-if="showTips" class="wrapper-content wrapper-desktop">
-        <span class="element-description">
-          Uma imagem cativante que demonstra a essência da escola...
-        </span>
-      </div>
+    <ContentContainer :highlighted="true">
+      <ContentWrapper :desktop-wrapper="true">
+        <p class="content-body font-bold">
+          {{ $t('pages.home.hero-title') }}
+        </p>
+        <p class="content-body">
+          {{ $t('pages.home.hero-body') }}
+        </p>
+      </ContentWrapper>
       <NuxtImg
         src="/home/hero.jpg"
-        alt="Hero"
+        :alt="heroAlt"
+        :title="heroAlt"
         width="1920"
-        height="1080"
+        height="800"
         sizes="sm:100vw lg:1280px"
-        class="w-full object-cover max-h-[600px]"
+        class="w-full min-h-[512px] object-cover object-center"
         preload
       />
-      <div class="wrapper-content wrapper-desktop">
+      <ContentWrapper :desktop-wrapper="true">
         <span v-if="showTips" class="element-description">
           Pequena descrição sobre a escola complementando a imagem...
         </span>
@@ -52,9 +60,9 @@ const schoolShowcase: IImageData[] = [
         <span v-if="showTips" class="element-description">
           Uma citação histórica que serve de base para a escola, com um belo pano de fundo...
         </span>
-      </div>
-    </div>
-    <div class="container-content z-0 relative shadow-inner">
+      </ContentWrapper>
+    </ContentContainer>
+    <ContentContainer class="z-0 relative shadow-inner">
       <span class="wrapper-desktop text-2xl z-10 px-6 py-12 text-center font-bold lg:p-24 lg:text-4xl lg:leading-tight">
         {{ $t('pages.home.quote') }}
       </span>
@@ -66,9 +74,9 @@ const schoolShowcase: IImageData[] = [
         sizes="sm:100vw lg:1280px"
         class="absolute top-0 w-full h-full object-cover opacity-40"
       />
-    </div>
-    <div class="container-content">
-      <div class="wrapper-content wrapper-desktop">
+    </ContentContainer>
+    <ContentContainer>
+      <ContentWrapper :desktop-wrapper="true">
         <span v-if="showTips" class="element-description">
           Chamada à ação, um texto para incentivar as pessoas a se inscreverem na escola...
         </span>
@@ -78,7 +86,7 @@ const schoolShowcase: IImageData[] = [
         <span v-if="showTips" class="element-description">
           Uma ou mais imagens que mostrem os diferentes aspectos da escola...
         </span>
-      </div>
+      </ContentWrapper>
       <div class="grid lg:grid-cols-3">
         <NuxtImg
           v-for="item in schoolShowcase"
@@ -91,7 +99,7 @@ const schoolShowcase: IImageData[] = [
           class="w-full h-[512px] object-cover"
         />
       </div>
-    </div>
+    </ContentContainer>
   </div>
 </template>
 
